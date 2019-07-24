@@ -1,0 +1,52 @@
+<!-- Error Message Starts-->
+<div *ngIf="showError">
+<error [errorCode]="broadcastErrorCode"></error>
+</div>
+<!-- Error Message Ends-->
+<div class="alert alert-success" role="alert" *ngIf="displayDriverAdded">
+    <div class="glyphicon glyphicon-ok"></div> 
+    <div>New Driver Added Successfully</div>
+</div>
+<h1>Add Driver</h1>
+<form [formGroup]="addDriverForm" *ngIf="showForm">
+<div class="row">
+<div class="col-md-4">
+<table class="data" cellspacing="2">
+<!--<tr><td>Username</td><td><input type="text" class="form-control" formControlName="username" required></td></tr>-->
+<tr><td>Email Id</td><td><input type="text" class="form-control" formControlName="email" required></td></tr>   
+<tr><td>First Name</td><td><input type="text" class="form-control" formControlName="firstName" required></td></tr>
+<tr><td>Middle Name</td><td><input type="text" class="form-control" formControlName="middleName"></td></tr>
+<tr><td>Last Name</td><td><input type="text" class="form-control" formControlName="lastName" required></td></tr>
+<tr><td>Date Of Birth</td><td><input type="date" class="form-control" formControlName="dob" max="2900-12-31" min="1800-12-31" required></td></tr>
+<tr><td>Gender</td><td><input type="text" class="form-control" formControlName="gender" required></td></tr>
+<tr><td>Driving License Number</td><td><input type="text" class="form-control" formControlName="licenseNumber" required></td></tr>
+<tr><td>Driving License Expiry</td><td><input type="date" class="form-control" formControlName="licenseExpiry" max="2900-12-31" min="1800-12-31" required></td></tr>
+<tr><td>Driving License Issued Authority</td><td><input type="text" class="form-control" formControlName="licenseIssuedAuthority" required></td></tr>
+<tr><td>Driving License Issued Province/State</td><td><input type="text" class="form-control" formControlName="licenseIssuedProvince" required></td></tr>
+<tr><td>Canada Visa Status</td><td><input type="text" class="form-control" formControlName="canVisaStatus" required></td></tr>
+<tr><td>USA Visa Status</td><td><input type="text" class="form-control" formControlName="usaVisaStatus"></td></tr>
+<tr><td>Nationality</td><td><input type="text" class="form-control" formControlName="nationality" required></td></tr>
+<tr><td>Notes</td><td><input type="text" class="form-control" formControlName="notes"></td></tr>
+</table>
+</div>
+<div class="col-md-4">
+    <table class="data" cellspacing="2">
+    <tr><td>Address Line 1</td><td><input type="text" class="form-control" formControlName="addressLine1" required></td></tr>
+    <tr><td>Address Line 2</td><td><input type="text" class="form-control" formControlName="addressLine2" required></td></tr>
+<tr><td>City/Town</td><td><input type="text" class="form-control" formControlName="city" required></td></tr>
+<tr><td>Province</td><td><input type="text" class="form-control" formControlName="province" required></td></tr>
+<tr><td>Country</td><td><input type="text" class="form-control" formControlName="country" required></td></tr>
+<tr><td>Postal Code</td><td><input type="text" class="form-control" formControlName="postalCode" required></td></tr>
+<tr><td>Mobile Number</td><td><input type="text" class="form-control" formControlName="cellPhone"></td></tr>
+<tr><td>Home Phone</td><td><input type="text" class="form-control" formControlName="homePhone"></td></tr>
+</table>
+</div>
+ </div>
+ </form>
+ <br>
+<div class="row">
+<div class="col-md-4">
+<button type="button" (click)="onClickSave(addDriverForm.value)" class="btn btn-primary">Save</button> 
+<button class="btn btn-primary" (click)="onClickCancel()">Cancel</button>
+</div>
+ </div>

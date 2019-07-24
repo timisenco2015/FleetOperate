@@ -1,0 +1,56 @@
+
+    <div id="content">
+      <div class="container">
+        
+        <div class="registration-body">
+          <div class="row justify-content-center">
+            <div class="col">
+              <div class="form-header">
+                <h1>Confirm your email</h1>
+                <p>We’ve sent a verification code to {{adminEmail}}. Please check the inbox and enter the code to continue.</p>
+              </div>
+            </div>
+          </div>
+        <!-- Display fill all required fields error starts-->
+        <div class="alert alert-danger" role="alert" *ngIf="displayRequiredFieldError">
+            
+            <div>Please enter the 4 digit verification code sent to your email ID.</div>
+        </div>
+        <!-- Display fill all required fields error ends-->
+        <!-- Display error starts-->
+        <div class="alert alert-danger" role="alert" *ngIf="displayErrorMessage">
+            
+           <div>{{errorMsg}}</div>
+        </div>
+        <!-- Display  error ends-->
+        <!-- Display fill all required fields error starts-->
+        <div class="alert alert-success" role="alert" *ngIf="displayVerificationCodeResent">
+                
+                <div>Please enter the verification code sent to your email ID.</div>
+        </div>
+        <!-- Display fill all required fields error ends-->
+          <div class="form-content">
+            <form >
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label class="form-control-label" for="confirmEmailForm">Verification code</label>
+                    <input type="text" class="form-control" id="confirmEmailForm" [(ngModel)]="code" name="code"
+                    maxlength="4" minlength="4" pattern="^[0-9]{4}$">
+                  </div>
+                </div>
+              </div>
+              <div class="form-footer">
+                <div class="row">
+                  <div class="col">
+                    <button (click)="onClickConfirmCode(code)" class="btn btn-block btn-primary" [disabled]="disableButton">Confirm Code</button>
+                    <p class="mouseprint text-center">Haven’t received an email? <a  id="highlightLink" (click)="resendVerificationCode()">Resend your verification code</a>.</p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  

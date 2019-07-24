@@ -1,0 +1,15 @@
+<!--<div class="container">-->
+
+<div *ngIf="showCurrentTripList">
+<current-trip-list (displayEditTrip)="onDisplayEditTrip($event)"></current-trip-list>
+</div>
+
+<div *ngIf="showCurrentTripEdit">
+ <edit-current-trip [selectedTripID]='broadcastTripID' [tripList]="sendTripList"></edit-current-trip>   
+</div>
+
+<div *ngIf="showAddConsignmentForCurrentTrip">
+    
+</div>
+
+<!--</div>-->

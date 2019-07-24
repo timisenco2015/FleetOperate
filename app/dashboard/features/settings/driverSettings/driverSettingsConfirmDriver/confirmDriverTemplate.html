@@ -1,0 +1,21 @@
+<div class="alert alert-success" role="alert" *ngIf="displayDriverConfirmed">
+    <div class="glyphicon glyphicon-ok"></div> 
+    <div>Driver Confirmed</div>
+</div>
+<h1>Confirm Driver</h1>
+<form [formGroup]="confirmDriverForm" *ngIf="showForm">
+<div class="row">
+<div class="col-md-4">
+<table class="data" cellspacing="2">
+<tr><td>Username</td><td><input type="text" class="form-control" formControlName="username" required></td></tr>
+</table>
+</div>
+ </div>
+ </form>
+ <br>
+<div class="row">
+<div class="col-md-4">
+<button type="button" (click)="onClickConfirm(confirmDriverForm.value)" class="btn btn-primary">Confirm</button> 
+<button class="btn btn-primary" (click)="onClickCancel()">Cancel</button>
+</div>
+ </div>

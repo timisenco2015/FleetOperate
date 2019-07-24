@@ -1,0 +1,196 @@
+
+[ {
+  "firstName" : "Mark",
+  "lastName" : "Vogel",
+  "licenseNumber" : "MRKSNGH123",
+  "licenseExpiryDate" : 65434,
+  "driverId" : "MS111",
+  "status" : "Assigned",
+  "address" : "526 Pembina Hwy",
+  "country" : "Canada",
+  "province" : "MB",
+  "city" : "Winnipeg",
+  "postalCode" : "R3T 7H8",
+  "dateOfBirth" : 545,
+  "mobile" : 0,
+  "homePhone" : 2049874563,
+  "emailId" : "mark.cogan@seway.ca",
+  "driverLogInfo" : {
+    "driverLogEvent" : "Driving",
+    "driverLoginTimestamp" : "08:30:15 18/02/2016"
+  },
+  "driverLocationInfo": {
+    "latitude" : 44.6488,
+    "longitude" : -63.5752,
+    "altitude" : 216.00,
+    "location" : "halifax"
+  }
+}, {
+  "firstName" : "Michael",
+  "lastName" : "Clark",
+  "licenseNumber" : "HNY123",
+  "licenseExpiryDate" : 65434,
+  "driverId" : "HS222",
+  "status" : "Un-Assigned",
+  "address" : "897 Pembina Hwy",
+  "country" : "Canada",
+  "province" : "ON",
+  "city" : "Toronto",
+  "postalCode" : "R5T 7H8",
+  "dateOfBirth" : 545,
+  "mobile" : 0,
+  "homePhone" : 2049874563,
+  "emailId" : "honey.cogan@seway.ca",
+  "driverLogInfo" : {
+    "driverLoginStatus" : "Logged-In",
+    "driverLoginTimestamp" : "12:45:15 18/02/2016",
+    "driverLogoutStatus" : "Logged-Out",
+    "driverLogoutTimestamp" : "08:45:15 25/02/2016"
+  },
+  "driverLocationInfo": {
+    "latitude" : 45.5017,
+    "longitude" : -73.5673,
+    "altitude" : 216.00,
+    "location" : "montreal"
+  }
+}, {
+  "firstName" : "Andrew",
+  "lastName" : "Thomas",
+  "licenseNumber" : "JLY123",
+  "licenseExpiryDate" : 65434,
+  "driverId" : "JS333",
+  "status" : "Day Off",
+  "address" : "999 Pembina Hwy",
+  "country" : "Canada",
+  "province" : "MB",
+  "city" : "Winnipeg",
+  "postalCode" : "R3T 2L8",
+  "dateOfBirth" : 545,
+  "mobile" : 0,
+  "homePhone" : 2049874563,
+  "emailId" : "jolly.cogan@seway.ca",
+  "driverLogInfo" : {
+    "driverLoginStatus" : "Logged-In",
+    "driverLoginTimestamp" : "12:45:15 18/02/2016",
+    "driverLogoutStatus" : "",
+    "driverLogoutTimestamp" : ""
+  },
+  "driverLocationInfo": {
+    "latitude" : 43.6532,
+    "longitude" : -79.3832,
+    "altitude" : 216.00,
+    "location" : "toronto"
+  }
+}, {
+  "firstName" : "William",
+  "lastName" : "Li",
+  "licenseNumber" : "LVLY123",
+  "licenseExpiryDate" : 65434,
+  "driverId" : "LS444",
+  "status" : "Assigned",
+  "address" : "526 Pembina Hwy",
+  "country" : "Canada",
+  "province" : "MB",
+  "city" : "Brandon",
+  "postalCode" : "R3T 7H8",
+  "dateOfBirth" : 545,
+  "mobile" : 0,
+  "homePhone" : 2049874563,
+  "emailId" : "lovely.cogan@seway.ca",
+  "driverLogInfo" : {
+    "driverLoginStatus" : "Logged-In",
+    "driverLoginTimestamp" : "12:45:15 18/02/2016",
+    "driverLogoutStatus" : "",
+    "driverLogoutTimestamp" : ""
+  },
+  "driverLocationInfo": {
+    "latitude" : 50.4452,
+    "longitude" : -104.6189,
+    "altitude" : 216.00,
+    "location" : "regina"
+  }
+}, {
+  "firstName" : "Hans",
+  "lastName" : "Wu",
+  "licenseNumber" : "YOYO123",
+  "licenseExpiryDate" : 65434,
+  "driverId" : "YY555",
+  "status" : "Assigned",
+  "address" : "526 Pembina Hwy",
+  "country" : "Canada",
+  "province" : "MB",
+  "city" : "Thompson",
+  "postalCode" : "R3T 7H8",
+  "dateOfBirth" : 545,
+  "mobile" : 0,
+  "homePhone" : 2049874563,
+  "emailId" : "yy.cogan@seway.ca",
+  "driverLogInfo" : {
+    "driverLoginStatus" : "Logged-In",
+    "driverLoginTimestamp" : "12:45:15 18/02/2016",
+    "driverLogoutStatus" : "Logged-Out",
+    "driverLogoutTimestamp" : "08:45:15 25/02/2016"
+  },
+  "driverLocationInfo": {
+    "latitude" : 53.5444,
+    "longitude" : -113.4909,
+    "altitude" : 216.00,
+    "location" : "edmonton"
+  }
+}, {
+  "firstName" : "Gagandeep",
+  "lastName" : "Singh",
+  "licenseNumber" : "Simmi123",
+  "licenseExpiryDate" : 65434,
+  "driverId" : "MS111",
+  "status" : "Assigned",
+  "address" : "526 Pembina Hwy",
+  "country" : "Canada",
+  "province" : "MB",
+  "city" : "Winnipeg",
+  "postalCode" : "R3T 7H8",
+  "dateOfBirth" : 545,
+  "mobile" : 0,
+  "homePhone" : 2049874563,
+  "emailId" : "mark.cogan@seway.ca",
+  "driverLogInfo" : {
+    "driverLoginStatus" : "Logged-In",
+    "driverLoginTimestamp" : "12:45:15 18/02/2016",
+    "driverLogoutStatus" : "",
+    "driverLogoutTimestamp" : ""
+  },
+  "driverLocationInfo": {
+    "latitude" : 48.4284,
+    "longitude" : -123.3656,
+    "altitude" : 216.00,
+    "location" : "victoria"
+  }
+}, {
+  "firstName" : "Alexander",
+  "lastName" : "Obabio",
+  "licenseNumber" : "KAL123",
+  "licenseExpiryDate" : 65434,
+  "driverId" : "MS111",
+  "status" : "Assigned",
+  "address" : "526 Pembina Hwy",
+  "country" : "Canada",
+  "province" : "MB",
+  "city" : "Winnipeg",
+  "postalCode" : "R3T 7H8",
+  "dateOfBirth" : 545,
+  "mobile" : 0,
+  "homePhone" : 2049874563,
+  "emailId" : "mark.cogan@seway.ca",
+  "driverLogInfo" : {
+    "driverLoginStatus" : "Logged-In",
+    "driverLoginTimestamp" : "12:45:15 18/02/2016",
+    "driverLogoutStatus" : "",
+    "driverLogoutTimestamp" : ""
+  },
+  "driverLocationInfo": {
+    "latitude" : 49.2827,
+    "longitude" : -123.1207,
+    "altitude" : 216.00,
+    "location" : "vancouver"
+  }
+} ]

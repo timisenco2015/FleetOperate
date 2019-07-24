@@ -1,0 +1,167 @@
+
+    
+    <!-- Create account Common Page Static Body Starts-->
+  
+    <!-- Display username exists error starts-->
+    <div class="alert alert-danger" role="alert" *ngIf="displayUsernameExists">
+        <div class="glyphicon glyphicon-remove"></div> 
+        <div>Username is already registered, please try another username.</div>
+    </div>
+    <!-- Display username exists error ends-->
+    <!-- Display email id exists error starts-->
+    <div class="alert alert-danger" role="alert" *ngIf="displayEmailIdExists">
+        <div class="glyphicon glyphicon-remove"></div> 
+        <div>Admin Email ID is already registered, please try another email ID.</div>
+    </div>
+    <!-- Display email id exists error ends-->
+
+    <!-- Display fill all required fields error starts-->
+    <div class="alert alert-danger" role="alert" *ngIf="displayRequiredFieldError">
+        <div class="glyphicon glyphicon-remove"></div> 
+        <div>Please fill all required fields with red asterisk (*).</div>
+    </div>
+    <!-- Display fill all required fields error ends-->
+
+    <!-- Display Please accept terms and conditions error starts-->
+    <div class="alert alert-danger" role="alert" *ngIf="displayAcceptTermsConditions">
+        <div class="glyphicon glyphicon-remove"></div> 
+        <div>Please accept terms and conditions to proceed further.</div>
+    </div>
+    <!-- Display Please accept terms and conditions error ends-->
+
+    <!-- Display Please select atleast one order error starts-->
+    <div class="alert alert-danger" role="alert" *ngIf="displayMinimumOrderCondition">
+        <div class="glyphicon glyphicon-remove"></div> 
+        <div>Please select atleast one order to proceed further.</div>
+    </div>
+    <!-- Display Please select atleast one order ends-->
+    
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Company Profile</h1>
+        </div>
+        <div class="col-md-4">
+            <h1>Admin Profile</h1>
+        </div>
+        <div class="col-md-4">
+            <h1>Add Orders</h1>
+        </div>
+    </div>
+    
+    <form [formGroup]="addCompanyForm" novalidate>
+    <div class="row">
+    <div class="col-md-4">
+    <table class="data" cellspacing="2">
+    <tr><td>Company Name<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyName" ></td></tr>
+   
+    </table>
+
+    <h3>Head Office Address</h3>
+    <table class="data" cellspacing="2">
+    <tr><td>Address Line 1<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyAddressLine1"></td></tr>
+    <tr><td>Address Line 2</td><td><input type="text" class="form-control" formControlName="companyAddressLine2"></td></tr>
+    <tr><td>City<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyCity"></td></tr>
+    <tr><td>Province<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyProvince"></td></tr>
+    <tr><td>Country<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyCountry"></td></tr>
+    <tr><td>Postal Code<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyPostalCode" ></td></tr>
+    </table>
+    </div>
+    
+    <div class="col-md-4">
+    <table class="data" cellspacing="2">
+        
+    <tr><td>First Name<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminFirstName" ></td></tr>
+    <tr><td>Middle Name</td><td><input type="text" class="form-control" formControlName="adminMiddleName" ></td></tr>
+    <tr><td>Last Name<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminLastName" ></td></tr>
+    
+    <tr><td>Email ID<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="email" (blur)="onEmailIdTabOff(addCompanyForm.value)" class="form-control" formControlName="adminEmail" ></td></tr>
+    <tr><td>Cell Phone<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminCellPhone" ></td></tr>
+    </table>
+    </div>
+
+    <div class="col-md-4">
+        <table class="data" cellspacing="2">
+            
+        <tr><td>Standard</td><td><input type="number" min="1" class="form-control" formControlName="standardQuantity" ></td></tr>
+        <tr><td>Enhanced</td><td><input type="number" min="1" class="form-control" formControlName="enhancedQuantity" ></td></tr>
+        <tr><td>Premier</td><td><input type="number" min="1" class="form-control" formControlName="premierQuantity" ></td></tr>
+        
+        </table>
+
+     
+    </div>
+    
+     </div>
+     </form>
+
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+        <input type="checkbox"  [checked]="acceptTerms" (change)="acceptTerms = !acceptTerms"> <label (click)="onClickTermAndConditions()"> Accept Terms and conditions</label>
+        <button id="showTermsConditionsModal" [hidden]="true" data-toggle="modal" data-target="#createAccountSuccessfulModal">Open Modal</button>
+        </div>
+    </div>
+    
+    <br>
+    <div class="row">
+    <div class="col-md-6">
+    <button type="button"  (click)="onClickNext(addCompanyForm)" class="btn btn-primary">Next</button> 
+    <button class="btn btn-primary" (click)="onClickCancel()">Cancel</button>
+    <!--<button id="showModal" [hidden]="true" data-toggle="modal" data-target="#createAccountSuccessfulModal">Open Modal</button>-->
+    </div>
+    </div>
+    
+    <!-- Create account Common Page Static Body Ends-->
+    
+    <!-- non subscribed template view-->
+    <div *ngIf="showNonsubscribedTemplate">
+    <service-unavailable> </service-unavailable>
+    </div>
+    <!-- non subscribed template view-->
+    
+    
+    <!-- Terms and conditions modal -->
+    
+    <div id="createAccountSuccessfulModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+      <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <!--<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Add Trailer</h4>
+          </div>-->
+          <div class="modal-body">
+            
+            <div class="popup_block">
+            <!--<h4 class="modal-title">Congratulations !! Your company is registered successfully.</h4>-->
+            In accordance with the effective statutory law 15/1999 about Personal Data Protection, FUMI HOGAR S.L
+            informs that personal data concerning the users of web site will be included and treated in a automated File
+            owned by FUMI HOGAR S.L and that will be managed for the exclusive purpose mentioned inside each
+            Questionnaire or Response Form. When pressing the button `Send`, User accepts the treatment of his data by
+            FUMI HOGAR S.L.
+            FUMI HOGAR S.L is committed that all personal data asked are strictly necessary in order to realize the
+            demanded service. FUMI HOGAR S.L will inform about the obligatory nature of facilitate determinate data,
+            without them would be impossible the realization of the demanded service.
+            In the same way, FUMI HOGAR S.L, like the Responsible of the File, is committed to maintain the secret
+            and confidentiality about all facilitated data, adopting for it all necessary security measures in order to avoid
+            its loss, modification without consent or no authorized
+            Accesses, according to the the Royal Decree 1720/2007.
+            FUMI HOGAR S.L informs to the User that he could exercise whenever his rights about access, rectification,
+            cancellation and opposition established in the Law 15/1999, December 13th,1999 notifying it at FUMI
+            HOGAR S.L, Avd. Ortega y Gasset 268, 29006, Malaga, Fumi-hogar@fumi-hogar.com
+            On the other hand, in accordance with the established in the Law 34/2002, July 11th, about Services of the
+            Information Society and Electronic Commerce, FUMI HOGAR S.L is committed to not envy any publicity
+            through Electronic Mail without the previous obvious authorization given by the addressee. The User could
+            be able to get opposed to the envy of publicity marking the corresponding square.
+            </div>
+            
+          </div>
+          <div class="modal-footer">
+          <button class="btn btn-primary" data-dismiss="modal" >OK</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <!-- Terms and conditions modal -->

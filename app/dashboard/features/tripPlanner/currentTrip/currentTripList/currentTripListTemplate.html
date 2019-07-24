@@ -1,0 +1,120 @@
+
+<h1>Current Trips</h1>
+<div class="data_search">
+
+    <div class="row">
+        <div class="col-md-4 col-sm-12">Trip ID <input type="search"> <button class="btn  btn-primary ">Search</button></div>
+        <div class="col-md-8 col-sm-12">
+		<div class="col-sm-4">Status <select><option>All</option><option>--Select--</option></select></div> <div class="col-sm-4">Destination <input type="text" class="form-control txt-search-trips"> </div> <div class="col-sm-4">Source <input type="text" class="form-control txt-search-trips"></div> </div>
+    </div>
+
+</div>
+             <table id="example" cellspacing="0" width="100%" class='table table-striped table-bordered'>
+                 <thead><tr><th>Trip ID</th><th>Status</th><th>Origin</th><th>Destination</th><th>Actions</th></tr></thead>
+                 <tbody>
+                     <tr *ngFor="let currentTrip of currentTrips" 
+                     (click)="onSelect(currentTrip)" class="truck-list-body">
+
+                <td>
+                    {{currentTrip.tripId}}
+                </td>
+                <td>
+                    {{currentTrip.status}}
+                </td>
+                <td>{{currentTrip.source}}</td>
+                <td>{{currentTrip.destination}}</td>
+                <td style="width: 300px;">
+                    <a style="padding-left: 20px" (click)="editTrip(currentTrip.tripId)">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a> 
+                    <a style="padding-left: 20px" (click)="onClickDelete(currentTrip.tripId)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                    <a style="padding-left: 20px" (click)="onClickAddConsignment()" [ngClass]="{disabled: disableAddConsignmentButton}" >
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span> 
+                        <span>Add Consignment</span>
+                    </a>
+                </td>
+            </tr>
+              </tbody>
+            </table>
+
+
+<div *ngIf="showSummary">            
+<h1 class="separator">Trip Summary</h1>
+<!-- in transit -->
+<div class="row">
+<div class="col-md-4 col-xs-12">
+
+<table class="data" cellspacing="2">
+<tr><td>Trip ID</td><td>{{currentTripSummary.tripId}}</td></tr>
+<tr><td>Start Date</td><td>{{currentTripSummary.startDate}}</td></tr>
+<tr><td>End Date</td><td>{{currentTripSummary.endDate}}</td></tr>
+<tr><td>Source</td><td>{{currentTripSummary.source}}</td></tr>
+<tr><td>Destination</td><td>{{currentTripSummary.destination}}</td></tr>
+</table>
+</div>
+</div>
+
+<h1 class="separator">Trip ID {{currentTripSummary.tripId}}</h1>
+
+<div class="row">
+<div class="col-md-4 col-xs-12">
+<h4>Truck Details</h4>
+<table class="data" cellspacing="2">
+<tr><td>Truck ID</td><td>{{currentTripSummary.truckId}}</td></tr>
+</table>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-4 col-xs-12">
+<h4>Trailer Details</h4>
+<table class="data" cellspacing="2">
+<tr *ngFor="let trailer of currentTripSummary.trailersDetails">
+    <td>Trailer ID</td><td>{{trailer.trailerID}}</td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-4 col-xs-12">
+<h4>Driver Details</h4>
+<table class="data" cellspacing="2">
+<tr *ngFor="let driver of currentTripSummary.driversDetails">
+    <td>Driver ID</td><td>{{driver.driverID}}</td>
+</tr>
+</table>
+</div>
+</div>
+
+<h4>Consignment Details</h4>
+<table  class="grid"  cellpadding="4">
+<thead>
+        <tr>
+            <th>Serial No.</th>
+            <th>Consignment ID</th>
+            <th>Consignment Type</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Pickup Date</th>
+            <th>Delivery Date</th>
+            <th>Documents</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let consignment of currentTripSummary.consignmentDetails; let i=index">
+<tr>
+    <td>{{consignment.serialNumber}}</td>
+    <td>{{consignment.consignmentID}}</td>
+    <td>{{consignment.consignmentType}}</td>
+    <td>{{consignment.consignmentSource}}</td>
+    <td>{{consignment.consignmentDestination}}</td>
+    <td>{{consignment.pickupDate}}</td>
+    <td>{{consignment.deliveryDate}}</td>
+    <td>{{consignment.document}}</td>
+</tr>
+    </tbody>
+</table>
+
+</div>

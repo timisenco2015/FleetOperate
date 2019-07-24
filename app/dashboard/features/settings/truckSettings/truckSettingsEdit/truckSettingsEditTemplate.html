@@ -1,0 +1,38 @@
+<!-- Error Message Starts-->
+<div *ngIf="showError">
+<error [errorCode]="broadcastErrorCode"></error>
+</div>
+<!-- Error Message Ends-->
+
+<h1>Edit Truck</h1>
+<form [formGroup]="editTruckForm" >
+<div class="row">
+<div class="col-md-4">
+<table class="data" cellspacing="2" >
+<tr><td>Truck Name</td><td><input type="text" class="form-control" formControlName="truckName" ngModel={{truckDetails.truckName}} required>
+                            <input type="text" style="display: none" class="form-control" formControlName="fleetId" ngModel={{truckDetails.fleetId}}></td></tr>
+<tr><td>Truck Number</td><td><input type="text" class="form-control" formControlName="truckNumber" ngModel={{truckDetails.truckNumber}} required></td></tr>
+<tr><td>Make (Year)</td><td><input type="text" class="form-control" formControlName="make" ngModel={{truckDetails.make}} required></td></tr>
+<tr><td>Model</td><td><input type="text" class="form-control" formControlName="model" ngModel={{truckDetails.model}} required></td></tr>
+<tr><td>Class</td><td><input type="text" class="form-control" formControlName="fleetClass" ngModel={{truckDetails.fleetClass}} required></td></tr>
+<tr><td>Color</td><td><input type="text" class="form-control" formControlName="color" ngModel={{truckDetails.color}} required></td></tr>
+<tr><td>Height (ft)</td><td><input type="text" class="form-control" formControlName="height" ngModel={{truckDetails.height}}></td></tr>
+<tr><td>Length (ft)</td><td><input type="text" class="form-control" formControlName="length" ngModel={{truckDetails.length}}></td></tr>
+<tr><td>Axel Weight (Tons)</td><td><input type="text" class="form-control" formControlName="axelWeight" ngModel={{truckDetails.axelWeight}}></td></tr>
+<tr><td>Tare Weight (Tons)</td><td><input type="text" class="form-control" formControlName="tareWeight" ngModel={{truckDetails.tareWeight}}></td></tr>
+<tr><td>Gross Weight (Tons)</td><td><input type="text" class="form-control" formControlName="grossWeight" ngModel={{truckDetails.grossWeight}}></td></tr>
+<tr><td>Vin Number</td><td><input type="text" class="form-control" formControlName="vin" ngModel={{truckDetails.vin}} required></td></tr>
+<tr><td>Base Location</td><td><input type="text" class="form-control" formControlName="baseLocation" ngModel={{truckDetails.baseLocation}} required></td></tr>
+<tr><td>Notes</td><td><input type="text" class="form-control" formControlName="notes" ngModel={{truckDetails.notes}}></td></tr>
+</table>
+</div>
+ </div>
+ </form>
+ <br>
+<div class="row">
+<div class="col-md-4">
+<button type="button" (click)="onClickSave(editTruckForm.value)" class="btn btn-primary">Save</button>
+<button class="btn btn-primary" (click)="onClickCancel()">Cancel</button>
+</div>
+ </div>
+ 

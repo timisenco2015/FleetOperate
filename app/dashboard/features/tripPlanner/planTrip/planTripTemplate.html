@@ -1,0 +1,323 @@
+<!--<div class="container">-->
+
+<!-- Error Message Starts-->
+<div *ngIf="showError">
+<error [errorCode]="broadcastPlanTripError"></error>
+</div>
+<!-- Error Message Ends-->
+
+<h1>Plan a Trip</h1>
+        
+<h4>Trip Details</h4>
+<!-- in transit -->
+<div *ngIf="showPlanTrip">
+<form [formGroup]="planTripForm" (ngSubmit)="onClickPlanTripSaveButton(planTripForm.value)">
+<div class="row">
+<div class="col-md-4 col-xs-12">
+
+<table class="data" cellspacing="2">
+<tr><td>Start Date</td><td><input type="date" class="form-control" [(ngModel)]="startDate " formControlName="startDate" required></td></tr>
+<tr><td>End Date</td><td><input type="date" class="form-control" [(ngModel)]="endDate " formControlName="endDate" required></td></tr>
+<tr><td>Source</td><td><input type="text" class="form-control" [(ngModel)]="source " formControlName="source" required></td></tr>
+<tr><td>Destination</td><td><input type="text" class="form-control" [(ngModel)]="destination " formControlName="destination" required></td></tr>
+</table>
+
+</div>
+</div>
+
+<br>
+<div class="row">
+<div class="col-md-4 col-xs-12">
+<h4>Truck Details</h4>
+<table class="data" cellspacing="2">
+<tr>
+    <td>Truck ID</td>
+    <td><input type="text" class="form-control" formControlName="fleetId" ngModel={{truckDetails}} required></td>
+    <td class="search-icon-block">
+        <a data-toggle="modal" href="#searchTruck" (click)="addTruck()">
+            <span class="glyphicon glyphicon-search search-icon" aria-hidden="true"></span>
+        </a>
+    </td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<br>
+<div class="row">
+
+<div class="col-md-4 col-xs-16">
+<h4>Trailer Details 
+    <a data-toggle="modal" href="#addTrailer" style="float:right" (click)="addTrailer()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span> 
+        <span>Add Trailer</span>
+    </a>
+</h4>
+<i *ngIf='!addTrailers'>No Trailers added</i>
+<table class="data" cellspacing="2" *ngIf='addTrailers'>
+<tr *ngFor="let trailerId of planTripForm.controls['trailersDetails'].controls; let i = index"
+ [formGroup]="trailerId" >
+    <td>Trailer ID</td>
+    <td><input type="text" class="form-control" formControlName="fleetId" > </td>
+    <td class="search-icon-block">
+        <a (click)='removeTrailer(trailerId)' style="float:right">
+            <span class="glyphicon glyphicon-trash"></span>
+        </a>
+    </td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="row">
+
+</div>
+
+<br>
+<div class="row">
+<div class="col-md-4 col-xs-16">
+<h4>Driver Details 
+    <a data-toggle="modal" href="#addDriver" style="float:right" (click)="addDriver()">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span> 
+    <span>Add Driver</span>
+    </a>
+</h4>
+<i *ngIf='!addDrivers'>No Drivers added</i>
+ <table class="data" cellspacing="2" *ngIf='addDrivers'>
+<tr *ngFor="let driverId of planTripForm.controls['driversDetails'].controls; let i = index"
+ [formGroup]="driverId">
+    <td>Driver ID</td>
+    <td><input type="text" class="form-control" formControlName="driverId"> </td>
+    <td class="search-icon-block">
+        <a (click)='removeDriver(driverId)' style="float:right">
+            <span class="glyphicon glyphicon-trash"></span>
+        </a>
+    </td>
+</tr>
+</table>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-4">
+<button type="submit" class="btn btn-primary" [ngClass]="{disabled: disableCreateTripButton}">Create Trip</button> 
+<button class="btn btn-primary">Cancel</button>
+</div>
+ </div>
+</form>
+
+<br>
+
+<form [formGroup]="consignmentForm" (ngSubmit)="onClickAddConsignmentSaveButton(consignmentForm.value)">
+  <div class="row" >
+<div class="col-md-4" >
+<h4>Consignment Details
+    <a class="btn btn-primary " (click)="onClickAddConsignment()" [ngClass]="{disabled: disableAddConsignmentButton}" style="float:right" >
+    <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span> 
+    <span>Add Consignment</span>
+    </a>
+</h4>
+</div>
+ </div>
+ <br>
+ <div *ngIf="createTripInfoMessage">
+ <div class="alert alert-info" role="alert">
+     <strong>Please create a trip first !.</strong> 
+</div>
+ </div>
+ <div *ngIf="showAddConsignment" >
+      <div class="row" >
+   <div class="col-md-4">
+ <table class="data" cellspacing="2" >
+    
+    <tr><td>Consignment ID</td><td><input type="text" class="form-control" formControlName="consignmentId">
+            <input type="text" class="form-control" [(ngModel)]="tripId" formControlName="tripId" style="display: none">
+    </td></tr>
+    <tr><td>Consignment Type</td><td><input type="text" class="form-control" formControlName="consignmentType"></td></tr>
+    <tr><td>Source</td><td><input type="text" class="form-control" formControlName="source"></td></tr>
+    <tr><td>Destination</td><td><input type="text" class="form-control" formControlName="destination"></td></tr>
+    <tr><td>Pickup Date</td><td><input type="date" class="form-control" formControlName="pickUpDate"></td></tr>
+    <tr><td>Delivery Date</td><td><input type="date" class="form-control" formControlName="deliveryDate"></td></tr>
+    <tr><td>Documents</td><td>
+        <label class="btn btn-primary" for="uploadConsignmentDocument" >Select Document</label>
+        <input type="file" id="uploadConsignmentDocument" style="display: none" 
+        (change)='onSelectDocument($event)' >
+        <input type="text" class="form-control"  [(ngModel)]="fileName" formControlName="fileName" >
+    </td>
+</tr>
+</table>
+   
+<br>
+{{ planTripForm.value|json }}
+<br>
+{{consignmentForm.value|json}}
+</div>
+ </div>
+<br>
+ <div class="row" >
+<div class="col-md-4">
+<button type="submit" class="btn btn-primary">Save Consignment</button> <button class="btn btn-primary">Cancel</button>
+</div>
+ </div>	
+  </div>	
+ </form>
+</div>
+ <br>
+ <div class="row" >
+<div class="col-md-4">
+<button type="button" class="btn btn-primary" (click)="onClickSaveTripButton()">Save Trip</button> 
+</div>
+ </div>	
+<!--</div>-->
+
+<!-- search truck modal -->
+<div id="searchTruck" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Search Truck</h4>
+      </div>
+      <div class="modal-body">
+        
+		<div class="popup_block">
+		
+		<div class="row">
+		<div class="col-sm-3">Start Location</div><div class="col-sm-3"><strong>{{source}}</strong></div>
+        <div class="col-sm-3">Delivery Location</div><div class="col-sm-3"><strong>{{destination}}</strong></div>
+		</div>
+		<div class="row">
+		<div class="col-sm-3">Start Date</div><div class="col-sm-3"><strong>{{startDate}}</strong></div>
+        <div class="col-sm-3">Delivery Date</div><div class="col-sm-3"><strong>{{endDate}}</strong></div>
+		</div>
+		
+		</div>
+		
+			 <table  class="tabledata" cellspacing="0" width="100%">
+                 <thead><tr><th></th><!--<th>Truck ID</th>--><th>Truck Number</th><th>Axel</th><th>Source</th></tr></thead>
+                 <tbody *ngFor="let truck of trucks">
+				 <tr (change)="truckId = onSelectingTruck(truck.fleetId); truckNumber = onSelectingTruck(truck.truckNumber)">
+                     <td>
+                         <input type="radio" name="trucks" id="chk1" >
+                     </td>
+                     <!--<td>{{truck.fleetId}}</td>-->
+                     <td>{{truck.truckNumber}}</td>
+                     <td>{{truck.axelWeight}}</td>
+                     <td>{{truck.source}}</td>
+                 </tr>
+              </tbody></table>
+		
+		
+      </div>
+      <div class="modal-footer">
+	  <button class="btn btn-primary" data-dismiss="modal" (click)="sendTruckData(truckId)">OK</button>
+        <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- search truck modal -->
+
+<!-- add Trailer modal -->
+<div id="addTrailer" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Trailer</h4>
+      </div>
+      <div class="modal-body">
+        
+		<div class="popup_block">
+		
+		<div class="row">
+		<div class="col-sm-3">Start Location</div><div class="col-sm-3"><strong>{{source}}</strong></div>
+        <div class="col-sm-3">Delivery Location</div><div class="col-sm-3"><strong>{{destination}}</strong></div>
+		</div>
+		<div class="row">
+		<div class="col-sm-3">Start Date</div><div class="col-sm-3"><strong>{{startDate}}</strong></div>
+        <div class="col-sm-3">Delivery Date</div><div class="col-sm-3"><strong>{{endDate}}</strong></div>
+		</div>
+		
+		</div>
+		
+			 <table  class="tabledata" cellspacing="0" width="100%">
+                 <thead><tr><th></th><th>Trailer ID</th><th>Trailer Number</th><th>Type</th><th>Source</th></tr></thead>
+                 <tbody *ngFor="let trailer of trailers">
+				 <tr (change)="trailerId = onSelectingTrailer(trailer.trailerId)">
+                     <td><input type="radio" name="trailers" ></td>
+                     <td>{{trailer.trailerId}}</td>
+                     <td>{{trailer.trailerNumber}}</td>
+                     <td>{{trailer.type}}</td>
+                     <td>{{trailer.baseLocation}}</td>
+                 </tr>
+              </tbody></table>
+		
+		
+      </div>
+      <div class="modal-footer">
+	  <button class="btn btn-primary" data-dismiss="modal" (click)="sendTrailerData(trailerId)">OK</button>
+        <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- add Trailer modal -->
+
+
+
+	<!-- add Driver modal -->
+<div id="addDriver" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Driver</h4>
+      </div>
+      <div class="modal-body">
+        
+		<div class="popup_block">
+		
+		<div class="row">
+		<div class="col-sm-3">Start Location</div><div class="col-sm-3"><strong>{{source}}</strong></div>
+        <div class="col-sm-3">Delivery Location</div><div class="col-sm-3"><strong>{{destination}}</strong></div>
+		</div>
+		<div class="row">
+		<div class="col-sm-3">Start Date</div><div class="col-sm-3"><strong>{{startDate}}</strong></div>
+        <div class="col-sm-3">Delivery Date</div><div class="col-sm-3"><strong>{{endDate}}</strong></div>
+		</div>
+		
+		</div>
+		
+			 <table  class="tabledata" cellspacing="0" width="100%">
+                 <thead><tr><th></th><th>Driver ID</th><th>Driver Name</th><th>License Number</th><th>Status</th></tr></thead>
+                 <tbody *ngFor="let driver of drivers">
+				 <tr (change)="driverId = onSelectingDriver(driver.driverId)">
+                     <td><input type="radio" name="drivers"></td>
+                     <td>{{driver.driverId}}</td>
+                     <td>{{driver.name}}</td>
+                     <td>{{driver.licenseNumber}}</td>
+                     <td>{{driver.status}}</td>
+                 </tr>
+              </tbody></table>
+		
+		
+      </div>
+      <div class="modal-footer">
+	  <button class="btn btn-primary" data-dismiss="modal" (click)="sendDriverData(driverId)">OK</button>
+        <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- add Driver modal -->

@@ -1,0 +1,61 @@
+<!-- Confirm User Common Page Header Starts -->
+<div class="container">
+
+    <header>
+        <div class="row">
+            <div class="col-md-6">
+                <a class="logo" ><img src="external/images/FleetOperate.png" class="client">
+                <!--<span class="brandname">
+                        <span class="brand">FleetOperate</span>
+                        <span class="sub">Your Fleet Management Solution</span>
+                </span>-->
+                </a>
+            </div>
+            
+        </div>
+    </header>
+</div>
+<!-- Confirm User Common Page Header Ends -->
+
+<!-- Confirm User Common Page Static Body Starts-->
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+<h1>Admin Reset Password</h1>
+<p>Admin has to reset their password on first time login.</p>
+</div>
+</div>
+
+<form [formGroup]="confirmUserForm" >
+<div class="row">
+<div class="col-md-8">
+<table class="data" cellspacing="2">
+    
+<!--<tr><td>Company ID</td><td><input type="text" class="form-control" formControlName="companyId" ></td></tr> -->
+<tr><td>Username</td><td><input type="text" class="form-control" formControlName="username" ></td></tr>   
+<tr><td>Temporary Password</td><td><input type="password" class="form-control" formControlName="temporaryPassword" ></td></tr>
+<tr><td>New Password</td><td><input type="password" class="form-control" formControlName="newPassword" ></td></tr>
+<tr><td>Confirm New Password</td><td><input type="password" class="form-control" formControlName="confirmNewPassword" ></td></tr>
+</table>
+</div>
+</div>
+</form>
+<br>
+<div class="row">
+<div class="col-md-4">
+<button type="button" (click)="onClickSave(confirmUserForm.value)" class="btn btn-primary">Save</button> 
+<button type="button" class="btn btn-primary" (click)="onClickCancel()">Cancel</button>
+</div>
+</div>
+
+</div>
+<!-- User Sign Up Common Page Static Body Ends-->
+
+<!-- User Sign Up Footer Starts -->
+<div class="container">
+    <footer>
+        <div class="col-md-6 col-xs-12 copyright">&copy; Copyright 2017 FleetOperate</div>
+        <div class="col-md-6 col-xs-12 footer_links"><a href="#">Privacy</a> | <a href="#">Legal</a> | <a href="#">fleetoperate.com</a> </div>
+    </footer>
+</div>
+<!-- User Sign Up Footer Ends -->

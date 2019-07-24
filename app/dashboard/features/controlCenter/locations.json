@@ -1,0 +1,169 @@
+{
+    "companyId": 123,
+    "activeTrucks": 14,
+    "inActiceTrucks": 6,
+    "activeDrivers": 21,
+    "inActiveDrivers": 9,
+    "fleetSituation": [
+                        {
+                        "fleetId": 111,
+                        "type": "TRUCK",
+                        "latitude": 49.8951,
+                        "longitude": -97.1384, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 222,
+                        "type": "TRUCK",
+                        "latitude": 50.4452,
+                        "longitude": -104.6189, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 333,
+                        "type": "TRUCK",
+                        "latitude": 52.1332,
+                        "longitude": -106.6700, 
+                        "status": "STOPPED",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 444,
+                        "type": "TRUCK",
+                        "latitude": 41.8781,
+                        "longitude": -87.6298, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 555,
+                        "type": "TRUCK",
+                        "latitude": 39.0119,
+                        "longitude": -98.4842, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 666,
+                        "type": "TRUCK",
+                        "latitude": 51.0486,
+                        "longitude": -114.0708, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 777,
+                        "type": "TRUCK",
+                        "latitude": 53.5444,
+                        "longitude": -113.4909, 
+                        "status": "WAITING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 888,
+                        "type": "TRUCK",
+                        "latitude": 44.6488,
+                        "longitude": -63.5752, 
+                        "status": "STOPPED",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 999,
+                        "type": "TRUCK",
+                        "latitude": 42.3601,
+                        "longitude": -71.0589, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 101,
+                        "type": "TRUCK",
+                        "latitude": 49.2827,
+                        "longitude": -123.1207, 
+                        "status": "WAITING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 102,
+                        "type": "TRUCK",
+                        "latitude": 34.0522,
+                        "longitude": -118.2437, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 103,
+                        "type": "TRUCK",
+                        "latitude": 48.4284,
+                        "longitude": -123.3656, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 104,
+                        "type": "TRUCK",
+                        "latitude": 25.7617,
+                        "longitude": -80.1918, 
+                        "status": "DRIVING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 105,
+                        "type": "TRUCK",
+                        "latitude": 43.6532,
+                        "longitude": -79.3832, 
+                        "status": "WAITING",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 106,
+                        "type": "TRUCK",
+                        "latitude": 49.8951,
+                        "longitude": -97.1384, 
+                        "status": "STOPPED",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 107,
+                        "type": "TRUCK",
+                        "latitude": 49.8951,
+                        "longitude": -97.1384, 
+                        "status": "STOPPED",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 108,
+                        "type": "TRUCK",
+                        "latitude": 49.8951,
+                        "longitude": -97.1384, 
+                        "status": "STOPPED",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 109,
+                        "type": "TRUCK",
+                        "latitude": 49.8951,
+                        "longitude": -97.1384, 
+                        "status": "STOPPED",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 110,
+                        "type": "TRUCK",
+                        "latitude": 49.8951,
+                        "longitude": -97.1384, 
+                        "status": "STOPPED",
+                        "alerts": ""
+                        },
+                        {
+                        "fleetId": 112,
+                        "type": "TRUCK",
+                        "latitude": 49.8951,
+                        "longitude": -97.1384, 
+                        "status": "STOPPED",
+                        "alerts": ""
+                        }]
+    
+    }

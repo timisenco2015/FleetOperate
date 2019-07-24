@@ -1,0 +1,90 @@
+<!-- content for general starts here -->
+<div class="row tabbed-data">
+  <div class="col-md-3 col-xs-12">
+
+    <div *ngIf="fleetGeneral">
+      <table class="data" cellspacing="2">
+        <tr>
+          <td>VIN</td>
+          <td>{{fleetGeneral.vin}}</td>
+        </tr>
+        <tr>
+          <td>Make</td>
+          <td>{{fleetGeneral.make}}</td>
+        </tr>
+        <tr>
+          <td>Model</td>
+          <td>{{fleetGeneral.model}}</td>
+        </tr>
+        <tr>
+          <td>Class</td>
+          <td>{{fleetGeneral.truckClass}}</td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td>{{fleetGeneral.type}}</td>
+        </tr>
+        <tr>
+          <td>Year</td>
+          <td>{{fleetGeneral.makeYear}}</td>
+        </tr>
+        <tr>
+          <td>Color</td>
+          <td>{{fleetGeneral.color}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="col-md-3 col-xs-12">
+    <div *ngIf="fleetGeneral">
+      <table class="data">
+        <tr>
+          <td>Fuel</td>
+          <td>{{fleetGeneral.fuel}}</td>
+        </tr>
+        <tr>
+          <td>Fuel Type</td>
+          <td>{{fleetGeneral.fuelType}}</td>
+        </tr>
+        <tr>
+          <td>Max Load (kg)</td>
+          <td>{{fleetGeneral.truckTareWeight}} </td>
+        </tr>
+        <tr>
+          <td>Max Length (ft)</td>
+          <td>{{fleetGeneral.truckTareWeight}} </td>
+        </tr>
+        <tr>
+          <td>Height (ft)</td>
+          <td>{{fleetGeneral.truckTareWeight}} </td>
+        </tr>
+        <tr>
+          <td>Carrying Hazardous material</td>
+          <td>no </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="col-md-6 col-xs-12">
+    <div *ngIf="showMap">  
+            <fleetMap [fleetLocation]='broadcastTruckLoc'></fleetMap>
+        </div>
+
+  </div>
+
+  <div *ngIf="!fleetGeneral">
+    No General information available for this fleet.
+  </div>
+
+  
+</div>
+
+<!--content for general ends here -->
+  
+  
+  
+  
+  

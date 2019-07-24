@@ -1,0 +1,95 @@
+<!-- Document List 
+<div class="container">-->
+
+  <h1>Documents <span>(Total {{truckFilter }}, available {{availableFleet}})</span></h1>
+  <div class="data_search">
+
+    <div class="row">
+      <div class="col-md-4 col-sm-12">Document ID <input type="search"> <button class="btn  btn-primary ">Search</button></div>
+      <div class="col-md-8 col-sm-12 data-search-right">Source ID <input type="search"> Date <input type="search" id="datepicker" readonly class="form_datetime"> Trip ID
+        <input
+          type="search"></div>
+    </div>
+
+  </div>
+<!-- Document List Outbox -->
+  <h4>Document Outbox </h4>
+
+  <table id="example" class="display" cellspacing="0" width="100%" class='table table-striped table-bordered'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Time Stamp</th>
+        <th>Date</th>
+        <th>Fleet ID</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let officeDocument of officeUploadedDocuments" (click)="onSelect(document)" class="truck-list-body">
+
+        <td>{{officeDocument.documentId}}</td>
+        <td>{{officeDocument.name}}</td>
+        <td>{{officeDocument.type}}</td>
+        <td>{{officeDocument.time}}</td>
+        <td>{{officeDocument.date}}</td>
+        <td>{{officeDocument.fleetId}}</td>
+        <td>{{officeDocument.status}}</td>
+        <td>{{officeDocument.notes}}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+<!-- Document List Inbox -->
+  <h4>Document Inbox </h4>
+
+  <table id="example" class="display" cellspacing="0" width="100%" class='table table-striped table-bordered'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Time Stamp</th>
+        <th>Date</th>
+        <th>Fleet ID</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let truckDocument of truckUploadedDocuments" (click)="onSelect(document)" class="truck-list-body">
+
+        <td>{{truckDocument.documentId}}</td>
+        <td>{{truckDocument.name}}</td>
+        <td>{{truckDocument.type}}</td>
+        <td>{{truckDocument.time}}</td>
+        <td>{{truckDocument.date}}</td>
+        <td>{{truckDocument.fleetId}}</td>
+        <td>{{truckDocument.status}}</td>
+        <td>{{truckDocument.notes}}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+<!-- Document Details View -->
+  <div *ngIf='showDetails'>
+    <documentDetails></documentDetails>
+  </div>
+<!-- Document Managenment View -->
+  <div *ngIf='showManagenment'>
+    <documentManagement (refreshDocumentList)='onRefreshDocumentList()'></documentManagement>
+  </div>
+
+<!--</div>-->

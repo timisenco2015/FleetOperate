@@ -1,0 +1,96 @@
+<!-- Trailer Summary -->
+<h1 class="separator">Summary <a href="#"><span class="glyphicon glyphicon-print" aria-hidden="true" style="float:right"></span></a></h1>
+<!-- in transit -->
+<div class="row">
+    <div class="col-md-4 col-xs-12">
+
+        <div *ngIf="trailerSummary">
+            <table class="data" cellspacing="2">
+                <tr>
+                    <td>Trailer Name</td>
+                    <td>{{trailerSummary.trailerName}}</td>
+                </tr>
+                <tr>
+                    <td>Trailer Type</td>
+                    <td>{{trailerSummary.type}}</td>
+                </tr>
+                <tr>
+                    <td>Base Location</td>
+                    <td>{{trailerSummary.baseLocation}}</td>
+                </tr>
+                <tr>
+                    <td>Make</td>
+                    <td>{{trailerSummary.make}}</td>
+                </tr>
+                <tr>
+                    <td>Model</td>
+                    <td>{{trailerSummary.model}}</td>
+                </tr>
+                <tr>
+                    <td>License Number</td>
+                    <td>{{trailerSummary.licenseNumber}}</td>
+                </tr>
+                <tr>
+                    <td>License Expiry Date</td>
+                    <td>{{trailerSummary.licenseExpirtyDate}}</td>
+                </tr>
+                <tr>
+                    <td>Distance Traveled (km)</td>
+                    <td>{{trailerSummary.distanceTraveledKm}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="col-md-4 col-xs-12">
+
+        <div *ngIf="trailerSummary">
+            <table class="data">
+                <tr>
+                    <td>Finance Status</td>
+                    <td>{{trailerSummary.financeStatus}}</td>
+                </tr>
+                <tr>
+                    <td>Financing Institution</td>
+                    <td>{{trailerSummary.financingInstitution}}</td>
+                </tr>
+                <tr>
+                    <td>Registration Company</td>
+                    <td>{{trailerSummary.registrationCompany}}</td>
+                </tr>
+                <tr>
+                    <td>Premium Frequency</td>
+                    <td>{{trailerSummary.premiumFrequency}}</td>
+                </tr>
+                <tr>
+                    <td>Insurance Company</td>
+                    <td>{{trailerSummary.insuranceCompany}}</td>
+                </tr>
+                <tr>
+                    <td>Insurance Due Date</td>
+                    <td>{{trailerSummary.insuranceDueDate}}</td>
+                </tr>
+                <tr>
+                    <td>US Permit</td>
+                    <td>{{trailerSummary.usaPermit}}</td>
+                </tr>
+                <tr>
+                    <td>US Permit Expiry Date</td>
+                    <td>{{trailerSummary.usaPermitExpiry}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div *ngIf="!trailerSummary">
+            No Summary information available for this trailer.
+        </div>
+
+    </div>
+
+    <div class="col-md-4 col-xs-12">
+        <img src="external/images/truck.jpg">
+    </div>
+</div>
+
+<!--content for summary ends here -->

@@ -1,0 +1,35 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-12">
+
+            <nav class="navbar navbar-default">
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav nav-pills">
+                            <li [ngClass]="{active:isCompanyInfoActive}"><a (click)='onClickCompanyInfo()'>Company Info</a></li>
+                            <li [ngClass]="{active: isAdminUsersActive}"><a (click)='onAdminUser()'>Admin Users</a></li>
+                            <li [ngClass]="{active: isBillingPaymentActive}"><a (click)='onBillingPayment()'>Billing & Payment</a></li>
+                        </ul>
+                    </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div  *ngIf="isCompanyInfoActive" [ngStyle]="{'border': '1px solid #D1D0CE','padding':'8px','padding-top':'10px','padding-bottom':'10px'}">
+                <companyInfo [companyInfo]="companyInfo"> </companyInfo>
+            </div>
+
+            <div *ngIf ="isAccountActive">
+    
+            </div>
+
+            <div *ngIf="isAdminUsersActive" [ngStyle]="{'border': '1px solid #D1D0CE','padding':'8px','padding-top':'10px','padding-bottom':'10px'}">
+                <adminUser [adminInfo]="adminInfo"></adminUser>
+            </div>
+
+            <div *ngIf="isBillingPaymentActive">
+                <billingPayment [billingInfo]="billingInfo"></billingPayment>
+    
+            </div>
+        </div>
+    </div>

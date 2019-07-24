@@ -1,0 +1,126 @@
+<!-- content for diagnostics starts here -->
+<div class="row tabbed-data">
+    
+        <!--<ul class="nav nav-pills">
+            <li role="presentation" [ngClass]="{active: activeYesterday}"><a >Yesterday</a></li>
+            <li role="presentation" [ngClass]="{active: activeToday}"><a >Today</a></li>
+            <li role="presentation">
+                <form class="navbar-form">
+                    <div class="form-group">
+                        <input type="date" class="form-control" max="2900-12-31" min="1400-12-31">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </li>
+        </ul>-->
+
+    <div *ngIf="fleetDiagnostics" >
+        
+    <div *ngFor="let fleetDiagnostic of fleetDiagnostics">
+    </div>
+    <div>
+        
+        <input type="range" [min]="firstObjectRange" [max]="lastObjectRange" data-show-value="true" data-popup-enabled="true" 
+        value="time" step="1" list="tickmarks" [(ngModel)]="sliderPosition" 
+        (change)='onSliderMove($event, sliderPosition, fleetDiagnostics)' id=slider/>
+        <!--<div *ngFor="let diag of fleetDiagnostics">
+                <label for="slider">{{diag.eventTime}}</label>
+                
+            </div>-->
+         <p ><strong>Time: {{diagTime}}</strong></p>
+           
+        <datalist id="tickmarks">
+            <div *ngFor="let diag of fleetDiagnostics">
+                <option value={{diag.id}} id="sliderPosition" label={{diag.eventTime}}></option>
+                <label for="sliderPosition">{{diag.eventTime}}</label>
+            </div>
+              
+        </datalist>
+        
+    </div>
+        
+        <div class="col-md-6 col-xs-12">
+            <table class="data" cellspacing="2">
+                <tr>
+                    <td>Location</td>
+                    <td>{{eachDiag.location}}</td>
+                </tr>
+                <tr>
+                    <td>Odometer</td>
+                    <td>{{eachDiag.odometer}}</td>
+                </tr>
+                <tr>
+                    <td>Fuel Level</td>
+                    <td>{{eachDiag.fuelLevel}}</td>
+                </tr>
+                <tr>
+                    <td>Engine RPM</td>
+                    <td>{{eachDiag.engineRPM}}</td>
+                </tr>
+                <tr>
+                    <td>Engine State</td>
+                    <td>{{eachDiag.engineState}}</td>
+                </tr>
+                <tr>
+                    <td>Coolant Temperature</td>
+                    <td>{{eachDiag.coolantTemperature}}</td>
+                </tr>
+
+                <tr>
+                    <td>Coolant Level</td>
+                    <td>{{eachDiag.coolantLevel}}</td>
+                </tr>
+                <tr>
+                    <td>Percent Load</td>
+                    <td>{{eachDiag.percentLoad}}</td>
+                </tr>
+                <tr>
+                    <td>Engine Faults</td>
+                    <td>{{eachDiag.engineFaults}}</td>
+                </tr>
+                <tr>
+                    <td>Instant Fuel Economy</td>
+                    <td>{{eachDiag.instantFuelEconomy}}</td>
+                </tr>
+                
+            </table>
+        </div>
+
+        <!--<div class="col-md-4 col-xs-12">
+        
+         <table class="data" cellspacing="2">     
+                <tr>
+                    <td>Coolant Level</td>
+                    <td>{{eachDiag.coolantLevel}}</td>
+                </tr>
+                <tr>
+                    <td>Percent Load</td>
+                    <td>{{eachDiag.percentLoad}}</td>
+                </tr>
+                <tr>
+                    <td>Engine Faults</td>
+                    <td>{{eachDiag.engineFaults}}</td>
+                </tr>
+                <tr>
+                    <td>Instant Fuel Economy</td>
+                    <td>{{eachDiag.instantFuelEconomy}}</td>
+                </tr>
+            </table>
+
+        </div>-->
+        <div *ngIf="showMap">
+        <div class="col-md-6 col-xs-12">
+            <fleetMap [fleetLocation]='broadcastTruckLoc'></fleetMap>
+        </div>
+        </div>
+        </div>
+        <!--<div class="col-md-4 col-xs-12">
+
+        </div>-->
+        <div *ngIf="!fleetDiagnostics">
+            No Diagnostics information available for this fleet.
+        </div>
+        
+    
+</div>
+<!--content for diagnostics ends here -->  

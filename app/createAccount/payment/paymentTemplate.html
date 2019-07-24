@@ -1,0 +1,219 @@
+<div id="content">
+    <div class="container">
+
+        <div class="registration-body">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="form-header">
+                        <h1>Payment Info</h1>
+                        <p>Select your payment method and enter your details. Your payment method is secure and encrypted.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Display fill all required fields error starts-->
+            <div class="alert alert-danger" role="alert" *ngIf="displayRequiredFieldError">
+                <div>Please fill all required fields with red asterisk (*).</div>
+            </div>
+            <!-- Display fill all required fields error ends-->
+
+            <!-- Display error starts-->
+            <div class="alert alert-danger" role="alert" *ngIf="displayErrorMessage">
+
+                <div>{{errorMessage}}</div>
+            </div>
+            <!-- Display  error ends-->
+            <div class="form-content">
+                <div class="billing-mode">
+                    <ul class="tabs">
+                        <li class="active">Credit Card</li>
+                    </ul>
+                </div>
+                <form [formGroup]="billingForm">
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <span class="form-control-label" for="card-element">Card Details</span>
+                                <div id="card-element" class="field"></div>
+                                <!-- Used to display form errors -->
+                                <div id="card-errors" role="alert"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-row">
+                        <div class="col">
+                            <h2>Billing Address</h2>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" (click)="onClickSameAddress()">
+                      Bill to my company’s address at {{companyAddress}}
+                    </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-divider">
+                                <span class="alternate">Or, enter another address</span>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showPaymentAddress">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="addressLine1">Address Line 1<span [ngStyle]="{'color':'red'}">*</span></label>
+                                    <input type="text" class="form-control" id="addressLine1" formControlName="billingAddressLine1" required>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-6 col-md-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="email">Apt / Suite <span class="faded">(optional)</span></label>
+                    <input type="text" class="form-control" id="ext">
+                  </div>
+                </div>-->
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="addressLine2">Address Line 2</label>
+                                    <input type="text" class="form-control" id="addressLine2" formControlName="billingAddressLine2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="city">City<span [ngStyle]="{'color':'red'}">*</span></label>
+                                    <input type="text" class="form-control" id="city" formControlName="billingCity" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="country">Country<span [ngStyle]="{'color':'red'}">*</span></label>
+                                    <select (change)="onClickCountry(billingCountry.value)" #billingCountry class="form-control" id="country" formControlName="billingCountry"
+                                        required>
+                                                 
+                              <option value="CANADA">CANADA</option>
+                              <option value="USA">USA</option>
+                            </select>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="provinceState">Province / State<span [ngStyle]="{'color':'red'}">*</span></label>
+                                    <div *ngIf="showCanadaProvinces">
+                                        <select class="form-control" id="provinceState" formControlName="billingProvince" required>
+                                        
+                                            <option>ALBERTA</option>
+                                            <option>BRITISH COLUMBIA</option>
+                                            <option>MANITOBA</option>
+                                            <option>NEW BRUNSWICK</option>
+                                            <option>NEWFOUNDLAND</option>
+                                            <option>NOVA SCOTIA</option>
+                                            <option>NORTHWEST TERRITORIES</option>
+                                            <option>ONTARIO</option>
+                                            <option>PRINCE EDWARD ISLAND</option>
+                                            <option>QUEBEC</option>
+                                            <option>SASKATCHEWAN</option>
+                                            <option>YUKON TERRITORY</option>
+                                        </select>
+                                    </div>
+
+                                    <div *ngIf="showUSProvinces">
+                                        <select class="form-control" id="provinceState" formControlName="billingProvince" required>
+                                            <option>ALABAMA</option>
+                                            <option>ALASKA</option>
+                                            <option>ARKANSAS</option>
+                                            <option>ARIZONA</option>
+                                            <option>CALIFORNIA</option>
+                                            <option>COLORADO</option>
+                                            <option>CONNECTICUT</option>
+                                            <option>DIST OF COL</option>
+                                            <option>DELAWARE</option>
+                                            <option>FLORIDA</option>
+                                            <option>GEORGIA</option>
+                                            <option>HAWAII</option>
+                                            <option>IOWA</option>
+                                            <option>IDAHO</option>
+                                            <option>ILLINOIS</option>
+                                            <option>INDIANA</option>
+                                            <option>KANSAS</option>
+                                            <option>KENTUCKY</option>
+                                            <option>LOUISIANA</option>
+                                            <option>MASSACHUSETTS</option>
+                                            <option>MARYLAND</option>
+                                            <option>MAINE</option>
+                                            <option>MICHIGAN</option>
+                                            <option>MINNESOTA</option>
+                                            <option>MISSOURI</option>
+                                            <option>MISSISSIPPI</option>
+                                            <option>MONTANA</option>
+                                            <option>NORTH CAROLINA</option>
+                                            <option>NORTH DAKOTA</option>
+                                            <option>NEBRASKA</option>
+                                            <option>NEW HEMPSHIRE</option>
+                                            <option>NEW JERSEY</option>
+                                            <option>NEW MEXICO</option>
+                                            <option>NEVADA</option>
+                                            <option>NEW YORK</option>
+                                            <option>OHIO</option>
+                                            <option>OKLAHOMA</option>
+                                            <option>OREGON</option>
+                                            <option>PENNSYLVANIA</option>
+                                            <option>PHODE ISLAND</option>
+                                            <option>SOUTH CAOLINA</option>
+                                            <option>SOUTH DAKOTA</option>
+                                            <option>TENNESSEE</option>
+                                            <option>TEXAS</option>
+                                            <option>UTAH</option>
+                                            <option>VIRGINIA</option>
+                                            <option>VERMONT</option>
+                                            <option>WASHINGTON</option>
+                                            <option>WISCONSIN</option>
+                                            <option>WEST VIRGINIA</option>
+                                            <option>WYOMING</option>
+                                            <option>AMERICANSAMOA</option>
+                                            <option>GUAM</option>
+                                            <option>NORTHERN MARIANAS</option>
+                                            <option>PUERTORICO</option>
+                                            <option>VIRGIN ISLANDS</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-6 col-md-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="postalCode">Postal Code<span [ngStyle]="{'color':'red'}">*</span></label>
+                                    <input type="text" class="form-control" id="postalCode" formControlName="billingPostalCode" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <div class="row">
+                            <div class="col">
+                                <button (click)="onClickContinue(billingForm)" class="btn btn-block btn-primary" [hidden]="disableContinue">Continue</button>
+                                <button class="btn btn-block btn-primary btn-processing" disabled [hidden]="!disableContinue">
+                                    <i class="fa fa-spinner fa-pulse fa-fw"></i> Processing
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

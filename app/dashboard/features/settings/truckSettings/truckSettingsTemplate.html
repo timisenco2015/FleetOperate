@@ -1,0 +1,26 @@
+<!--<div class="container">-->
+
+<h1  class="separator">Truck Settings <span class="pull-right">
+    <a (click)="onClickTruckList()"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Truck List</a> | 
+    <a (click)="onClickSearchTruck()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>  Search Truck</a> | 
+    <a (click)="onClickAddTruck()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Add Truck</a></span>
+</h1>
+
+<div *ngIf='truckSearchBarDisplay'>
+    <truck-settings-search ></truck-settings-search>
+</div>
+
+<div *ngIf='truckListDisplay'>
+    <truck-settings-list (displayEditForm)='onDisplayEditForm($event)' ></truck-settings-list>
+</div>
+
+<div *ngIf='truckAddDisplay'>
+    <truck-settings-add (displayTruckList)='onDisplayTruckList()'></truck-settings-add>
+</div>
+
+<div *ngIf='truckEditDisplay'>
+    <truck-settings-edit [selectedTruckIdToEdit]='broadcastTruckID' [truckToEdit]="sendTruckToEdit" 
+    (displayTruckList)='onDisplayTruckList()'></truck-settings-edit>
+</div>
+			
+<!--</div>-->

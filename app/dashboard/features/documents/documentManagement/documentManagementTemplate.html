@@ -1,0 +1,72 @@
+<!-- Document management Starts -->
+<h1 class="separator">Manage Documents</h1>
+<!-- in transit -->
+
+<div class="row">
+  <div class="col-xs-3">
+    <input type="file" id="uploadFile" style="display: none" (change)='onClickUploadDocument($event)' required>
+    <label for="uploadFile" class="btn btn-primary">Select Document to Upload</label>
+
+  </div>
+</div>
+<br>
+<form [formGroup]="uploadDocumentForm" *ngIf="showForm">
+  <div class="row" >
+<div class="col-md-4" >
+  <table class="data" cellspacing="2" >
+    
+      
+        <tr><td>Document Name</td><td><input type="text" class="form-control" formControlName="name" [(ngModel)]="fileName"></td></tr>
+        <tr><td>Document Type</td><td><input type="text" class="form-control" formControlName="type"></td></tr>
+        <tr><td>Document Date</td><td><input type="date" class="form-control" formControlName="documentDate" required></td></tr>
+        <tr><td>Notes</td><td><input type="text" class="form-control" formControlName="notes"></td></tr>
+        <tr >
+          <td>Fleet ID</td>
+        <td>
+          <label  style="padding-top: 8px; padding-left: 3px" >{{fleetId}}</label>
+          <input type="button" value="Select Truck" style="float: right" class="btn btn-primary" data-toggle="modal" data-target="#selectTruckModalID" (click)="selectTruck(i)">
+          <input type="text" class="form-control"  style="display: none" formControlName="fleetId" [(ngModel)]="selectedTruckId[i]" required>
+        </td>
+        </tr>
+   </table>
+   </div>
+ </div>
+     <br>
+  <!-- send button -->
+  <button  (click)='sendDocumentsToTruck()'  class="btn  btn-primary ">Send</button>
+</form>
+<!-- Document management Ends -->
+
+<!-- Modal -->
+<div id="selectTruckModalID" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select a Truck to Send Documents</h4>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="row" *ngFor="let truck of trucks; let i = index ">
+          <div class="col-xs-6">
+
+            <input type="radio" name="trucks" id="chk1"  (change)="truckId = onClickTruckCheckbox(truck.fleetId)">
+
+            <label for="chk1">{{truck.fleetId}}</label>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" (click)="sendTruckId(truckId)">OK</button>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

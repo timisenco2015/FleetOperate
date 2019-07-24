@@ -1,0 +1,139 @@
+<!-- Billing page starts -->
+<div class="row">
+    <div class="col-md-4">
+        <h1>Billing Information</h1>
+    </div>
+    
+</div>
+
+<div class="row">
+<div class="col-md-6">
+    <table class="data" cellspacing="2">
+        <tr>
+            <td>Company Name</td>
+            <td>{{companyOrdersDetails.companyName}}</td>
+        </tr>
+   
+    </table>
+
+    <h4>Head Office Address</h4>
+
+    <table class="data" cellspacing="2">
+    <tr><td>Address Line 1</td><td>{{companyOrdersDetails.companyAddressLine1}}</td></tr>
+    <tr><td>Address Line 2</td><td>{{companyOrdersDetails.companyAddressLine2}}</td></tr>
+    <tr><td>City</td><td>{{companyOrdersDetails.companyCity}}</td></tr>
+    <tr><td>Province</td><td>{{companyOrdersDetails.companyProvince}}</td></tr>
+    <tr><td>Country</td><td>{{companyOrdersDetails.companyCountry}}</td></tr>
+    <tr><td>Postal Code</td><td>{{companyOrdersDetails.companyPostalCode}}</td></tr>
+    </table>
+</div>
+    <div class="col-md-6">
+
+    </div>
+</div>
+
+    <br>
+    <form [formGroup]="billingForm" novalidate>
+    <div class="row">
+        <div class="col-md-3">
+            <div>Is shipping Address same as above? </div>
+        </div>
+        <div class="col-md-3"> 
+            <label>Yes</label>
+            <div><input type="checkbox" [checked]="shippingAddressCheckYes" (change)="shippingAddressCheck = !shippingAddressCheck" > </div>
+        </div>
+        <div class="col-md-0"> 
+            <label>No</label>
+            <div><input type="checkbox" [checked]="shippingAddressCheckNo" (change)="shippingAddressCheck = !shippingAddressCheck" > </div>
+        </div>
+        
+    </div>
+    <div *ngIf="shippingAddressCheckNo">
+        <table class="data" cellspacing="2">
+                    <tr><td>Address Line 1<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="shippingAddressLine1"></td></tr>
+                    <tr><td>Address Line 2</td><td><input type="text" class="form-control" formControlName="shippingAddressLine2"></td></tr>
+                    <tr><td>City<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="shippingCity"></td></tr>
+                    <tr><td>Province<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="shippingProvince"></td></tr>
+                    <tr><td>Country<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="shippingCountry"></td></tr>
+                    <tr><td>Postal Code<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="shippingPostalCode" ></td></tr>
+        </table>
+    </div>
+
+    
+    <br>
+    
+    <div class="row">
+        <div class="col-md-3">
+            <div>Is billing Address same as above? </div>
+        </div>
+        <div class="col-md-3"> 
+            <label>Yes</label>
+            <div><input type="checkbox" [checked]="billingAddressCheckYes" (change)="billingAddressCheckYes = !billingAddressCheckYes" > </div>
+        </div>
+        <div class="col-md-0"> 
+            <label>No</label>
+            <div><input type="checkbox" [checked]="billingAddressCheckNo" (change)="billingAddressCheckNo = !billingAddressCheckNo" > </div>
+        </div>
+    </div> 
+    <div *ngIf="billingAddressCheck">
+            <table class="data" cellspacing="2">
+                        <tr><td>Address Line 1<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="billingAddressLine1"></td></tr>
+                        <tr><td>Address Line 2</td><td><input type="text" class="form-control" formControlName="billingAddressLine2"></td></tr>
+                        <tr><td>City<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="billingCity"></td></tr>
+                        <tr><td>Province<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="billingProvince"></td></tr>
+                        <tr><td>Country<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="billingCountry"></td></tr>
+                        <tr><td>Postal Code<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="billingPostalCode" ></td></tr>
+            </table>
+    </div>
+    </form>
+
+    <br>
+    <h4>Billing Summary </h4>
+    <table  class="tabledata" cellspacing="0" width="100%">
+                     <thead>
+                         <tr>
+                             <th>Sl. No. </th>
+                             <th>Plan</th>
+                             <th>Quantity</th>
+                             <th>Price</th>
+                             <th>Total Price</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                     <tr *ngFor="let billSummary of billSummaryList">
+                         <td>{{billSummary.index}}</td>
+                         <td>
+                             {{billSummary.plan}}
+                         </td>
+                         
+                         <td>{{billSummary.quantity}}</td>
+                         
+                         <td>{{billSummary.price}}</td>
+                         <td>{{billSummary.totalPrice}}</td>
+                     </tr>
+                     <tr>
+                        Total: {{totalBillAmount}}
+                    </tr>
+                     <tr>
+                         GST: {{gst}}
+                     </tr>
+                     <tr>
+                        PST: {{pst}}
+                     </tr>
+                     <tr>
+                        Grand Total: {{totalBillAmountWithTax}}
+                     </tr>
+                           
+                     </tbody>
+    </table>
+
+    <br>
+    <div class="row">
+    <div class="col-md-6">
+    <button type="button"  (click)="onClickBack()" class="btn btn-primary">Back</button> 
+    <button class="btn btn-primary" (click)="onClickNext()">Next</button>
+    <!--<button id="showModal" [hidden]="true" data-toggle="modal" data-target="#createAccountSuccessfulModal">Open Modal</button>-->
+    </div>
+    </div>
+
+<!-- Billing page ends -->

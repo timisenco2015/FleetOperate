@@ -1,0 +1,391 @@
+
+.container-fluid {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  @media (min-width: 576px) {
+    .container-fluid {
+      padding-right: 15px;
+      padding-left: 15px;
+
+    }
+    .cols2 {
+      width: 100%;
+   
+  }
+
+    
+  }
+  
+  @media (min-width: 768px) {
+    .container-fluid {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    .cols2 {
+      width: 100%;
+   
+  }
+  }
+  
+  @media (min-width: 992px) {
+    .container-fluid {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    .cols2 {
+      width: 88%;
+   
+  }
+
+  }
+  
+  @media (min-width: 1200px) {
+    .container-fluid {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    .cols2 {
+      width: 88%;
+   
+  }
+
+    
+  }
+
+  .hidden-xs-up {
+    display: none !important;
+  }
+  
+  @media (max-width: 575px) {
+    .hidden-xs-down {
+      display: none !important;
+    }
+  
+  }
+  
+  @media (min-width: 576px) {
+    .hidden-sm-up {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .hidden-sm-down {
+      display: none !important;
+    }
+   
+  }
+  
+  @media (min-width: 768px) {
+    .hidden-md-up {
+      display: none !important;
+    }
+    
+
+  }
+  
+  @media (max-width: 991px) {
+    .hidden-md-down {
+      display: none !important;
+    }
+
+  
+  }
+  
+  @media (min-width: 992px) {
+    .hidden-lg-up {
+      display: none !important;
+    }
+    .showDashBoardOptions
+    {
+    z-index:50;
+    position:absolute;
+    background-color:#4B77BE; 
+    top:55px;
+    width:40%;
+    display:none;
+
+  }
+  }
+    
+  
+  @media (max-width: 1199px) {
+    .hidden-lg-down {
+      display: none !important;
+    }
+  
+  }
+  
+  @media (min-width: 1200px) {
+    .hidden-xl-up {
+      display: none !important;
+    }
+    
+    
+  }
+  
+  .hidden-xl-down {
+    display: none !important;
+  }
+  
+  .visible-print-block {
+    display: none !important;
+  }
+  
+  @media print {
+    .visible-print-block {
+      display: block !important;
+    }
+  }
+  
+  .visible-print-inline {
+    display: none !important;
+  }
+  
+  @media print {
+    .visible-print-inline {
+      display: inline !important;
+    }
+  }
+  
+  .visible-print-inline-block {
+    display: none !important;
+  }
+  
+  @media print {
+    .visible-print-inline-block {
+      display: inline-block !important;
+    }
+  }
+  
+  @media print {
+    .hidden-print {
+      display: none !important;
+    }
+  }
+
+
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+  .dashboardOptionsCss
+  {
+      color: #FFFFFF;
+      font-size:1.0em;
+      font-family: 'Open Sans Condensed', sans-serif;
+  }
+
+  .cols1 {
+    width: 12%;
+     }
+
+    
+
+.headingsStyle
+{
+    color: #264348;
+    font-size:1.2em;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.dashBoardSelectOptionsUl>li:hover
+{
+  background-color:#1F4788;
+}
+
+.dashBoardSelectOptionsUl>li
+{
+  padding-top:5%;
+  padding-bottom:5%;
+}
+
+
+
+@import url( https://fonts.googleapis.com/css?family=Anton );
+
+#driverTable thead
+{
+  background-color: #4B77BE;
+  color: #ffffff;
+  font-size:1.2em;
+  font-family: 'Anton', sans-serif;
+}
+
+
+
+
+#driverTable th
+{
+  border-right: 2px solid #FFFFFF;
+}
+
+
+.pull-0 {
+  right: auto;
+}
+
+.pull-1 {
+  right: 8.333333%;
+}
+
+.pull-2 {
+  right: 16.666667%;
+}
+
+.pull-3 {
+  right: 25%;
+}
+
+.pull-4 {
+  right: 33.333333%;
+}
+
+.pull-5 {
+  right: 41.666667%;
+}
+
+.pull-6 {
+  right: 50%;
+}
+
+.pull-7 {
+  right: 58.333333%;
+}
+
+.pull-8 {
+  right: 66.666667%;
+}
+
+.pull-9 {
+  right: 75%;
+}
+
+.pull-10 {
+  right: 83.333333%;
+}
+
+.pull-11 {
+  right: 91.666667%;
+}
+
+.pull-12 {
+  right: 100%;
+}
+
+.push-0 {
+  left: auto;
+}
+
+.push-1 {
+  left: 8.333333%;
+}
+
+.push-2 {
+  left: 16.666667%;
+}
+
+.push-3 {
+  left: 25%;
+}
+
+.push-4 {
+  left: 33.333333%;
+}
+
+.push-5 {
+  left: 41.666667%;
+}
+
+.push-6 {
+  left: 50%;
+}
+
+.push-7 {
+  left: 58.333333%;
+}
+
+.push-8 {
+  left: 66.666667%;
+}
+
+.push-9 {
+  left: 75%;
+}
+
+.push-10 {
+  left: 83.333333%;
+}
+
+.push-11 {
+  left: 91.666667%;
+}
+
+.push-12 {
+  left: 100%;
+}
+
+body
+{
+ 
+   
+    width:auto !important;
+    overflow-x:scroll; 
+    min-width:700px !important;
+}
+
+
+
+.showDashBoardOptions
+{
+  z-index:50;
+  position:absolute;
+  background-color:#4B77BE; 
+  top:55px;
+  width:43%;
+ 
+}
+
+
+#driverSearchInputFied {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: white;
+  background-image: url('../../external/images/searchIcon.png');
+  background-size: 17px 17px;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+
+
+
+
+#driverSearchInputFied:focus {
+  width: 30%;
+}
+
+#driversOptions a
+{
+  color:#4B77BE;
+  font-size: 15px;
+  cursor:pointer
+}
+
+#driversOptions a :hover
+{
+  color:#264348;
+  font-size: 20px;
+  cursor:pointer
+}
+
+

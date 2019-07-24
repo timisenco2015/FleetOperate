@@ -1,0 +1,40 @@
+[
+               {
+                   "trailerID": 1,
+                   "status": "available",
+                   "trailerType": "Dry Van",
+                   "lastLocation": "TOR",
+                   "baseLocation": "WPG"
+               },
+                   {
+                       "trailerID": 2,
+                       "trailerType": "Refer",
+                       "lastLocation": "VAN",
+                       "baseLocation": "WPG"
+                   },
+                   {
+                       "trailerID": 3,
+                       "status": "available",
+                       "trailerType": "Tum Pke",
+                       "lastLocation": "CAL",
+                       "baseLocation": "WPG"
+
+                   },
+                   {
+                       "trailerID": 4,
+                       "status": "available",
+                       "trailerType": "Dry Van",
+                       "lastKnownLocation": "EDM",
+                       "baseLocation": "WPG"
+
+                   },
+                   {
+                       "trailerID": 5,
+                       "status": "available",
+                       "trailerType": "Dry Van",
+                       "lastLocation": "WPG",
+                       "baseLocation": "WPG"
+
+                   }
+
+           ]

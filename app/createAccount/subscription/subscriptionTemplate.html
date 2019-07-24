@@ -1,0 +1,138 @@
+<div id="content">
+    <div class="container">
+
+        <div class="registration-body">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="form-header">
+                        <h1>Subscriptions</h1>
+                        <p>Select the number and type of FleetOperate subscriptions that you need. Not sure what you need?
+                            <a id="highlightLink" (click)="onClickComparePlans()">Compare plans now <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="showComparePlans" class="compare-plans">
+                <div class="comparison-item">
+                    <div class="comparison-item__header">
+                        <h2>Standard</h2>
+                        <div class="cost">
+                            <span class="dollar-sign">US$</span>
+                            <span class="amount">25</span>
+                            <span class="per-month">/mo</span>
+                        </div>
+                    </div>
+                    <ul class="comparison-item__content">
+                        <li>HOS/ELD for US and Canada</li>
+                        <li>GPS Navigation for Trucks</li>
+                        <li>Vehicle Diagnostics</li>
+                        <li>Portal Access</li>
+                        <li>(RODS, Driver Profile)</li>
+                        <li>Portal Access for Real Time Tracking</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item__header">
+                        <h2>Enhanced</h2>
+                        <div class="cost">
+                            <span class="dollar-sign">US$</span>
+                            <span class="amount">60</span>
+                            <span class="per-month">/mo</span>
+                        </div>
+                    </div>
+                    <ul class="comparison-item__content">
+                        <li>HOS/ELD for US and Canada</li>
+                        <li>GPS Navigation for Trucks</li>
+                        <li>Vehicle Diagnostics</li>
+                        <li>Portal Access</li>
+                        <li>(RODS, Driver Profile)</li>
+                        <li>Portal Access for Real Time Tracking</li>
+                        <li>In-cabin Tablet & Data Plan</li>
+                        <li>Driver Team ELD</li>
+                        <li>Document Station without Print</li>
+                        <li>Configurable Alerts</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item__header">
+                        <h2>Premier</h2>
+                        <p><a href="http://test.fleetoperate.com/index.php/contacts">Contact us to speak to sales directly <i class="fa fa-angle-right" aria-hidden="true"></i></a></p>
+                    </div>
+                    <ul class="comparison-item__content">
+                        <li>HOS/ELD for US and Canada</li>
+                        <li>GPS Navigation for Trucks</li>
+                        <li>Vehicle Diagnostics</li>
+                        <li>Portal Access</li>
+                        <li>(RODS, Driver Profile)</li>
+                        <li>Portal Access for Real Time Tracking</li>
+                        <li>In-cabin Tablet & Data Plan</li>
+                        <li>Driver Team ELD</li>
+                        <li>Configurable Alerts</li>
+                        <li>Document Station with Print</li>
+                        <li>Tire Pressure & Temperature Tracking</li>
+                        <li>Dash Cam</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-content">
+                <form [formGroup]="subscriptionForm">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <!-- Display fill all required fields error starts-->
+                                <div class="alert alert-danger" role="alert" *ngIf="displayRequiredFieldError">
+                                    <div>Please subscribe to aleast one order to continue.</div>
+                                </div>
+                                <!-- Display fill all required fields error ends-->
+                                <label class="form-control-label">Select subscriptions</label>
+                                <div class="subscriptions">
+                                    <div class="panel panel--left">
+                                        <div class="form-row">
+                                            <div class="col-4 col-md-3">
+                                                <input type="number" min="1" max="1000" class="form-control text-center subscription-count" id="standardSubscriptions" formControlName="standardQuantity"
+                                                    required>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-control-label no-margin-bottom" for="standardSubscriptions">
+                                <strong>Standard</strong> subscriptions at ${{standardSubscriptionPrice}}/mo</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-4 col-md-3">
+                                                <input type="number" min="1" max="1000" class="form-control text-center subscription-count" id="enhancedSubscriptions" formControlName="enhancedQuantity"
+                                                    required>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-control-label no-margin-bottom" for="enhancedSubscriptions">
+                                <strong>Enhanced</strong> subscriptions at ${{enhancedSubscriptionPrice}}/mo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel--right">
+                                        <div class="cost">
+                                            <span class="dollar-sign">$</span>
+                                            <span class="amount">{{(subscriptionForm.value.standardQuantity*standardSubscriptionPrice)+
+                                                (subscriptionForm.value.enhancedQuantity*enhancedSubscriptionPrice)}}</span>
+                                            <span class="per-month">/mo</span>
+                                        </div>
+                                        <!--<div class="total-subscriptions" *ngIf="displayNoSubscription">
+                                            No subscriptions selected
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <div class="row">
+                            <div class="col">
+                                <button (click)="onClickContinue(subscriptionForm)" class="btn btn-block btn-primary" [disabled]="disableButton">Proceed</button>
+                                <p class="mouseprint text-center">Need Premier features? <a href="http://test.fleetoperate.com/index.php/contacts">Contact us now to speak to sales directly <i class="fa fa-angle-right" aria-hidden="true"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

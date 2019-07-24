@@ -1,0 +1,95 @@
+<!-- Error Message Starts-->
+<div *ngIf="showError">
+<error [errorCode]="broadcastErrorCode"></error>
+</div>
+<!-- Error Message Ends-->
+<!-- content for general starts here -->
+<div class="row tabbed-data">
+  <div class="col-md-6 col-xs-12">
+
+    <div *ngIf="driverGeneral">
+      <table class="data" cellspacing="2">
+        <tr>
+            <td>Driver Name</td>
+            <td>{{driverGeneral.firstName}} {{driverGeneral.lastName}}</td>
+        </tr>
+        <tr>
+          <td>Date of Birth</td>
+          <td>{{driverGeneral.dob}}</td>
+        </tr>
+        <tr>
+          <td>License Number</td>
+          <td>{{driverGeneral.licenseNumber}}</td>
+        </tr>
+        <tr>
+          <td>License Expiry Date</td>
+          <td>{{driverGeneral.licenseExpiry}}</td>
+        </tr>
+        <tr>
+          <td>License Issued Authority</td>
+          <td>{{driverGeneral.licenseExpiry}}</td>
+        </tr>
+        <tr>
+          <td>License Issued Province/State</td>
+          <td>{{driverGeneral.licenseExpiry}}</td>
+        </tr>
+        <tr>
+          <td>App username</td>
+          <td>{{driverGeneral.email}}</td>
+        </tr>
+        <tr>
+          <td>Email ID</td>
+          <td>{{driverGeneral.email}}</td>
+        </tr>
+        
+      </table>
+    </div>
+
+  </div>
+  <div class="col-md-6 col-xs-12">
+    <div *ngIf="driverGeneral">
+      <table class="data">
+ 
+        <tr>
+          <td>Address Line 1</td>
+          <td>{{driverGeneral.address}}</td>
+        </tr>
+        <tr>
+          <td>Address Line 2</td>
+          <td>{{driverGeneral.address}}</td>
+        </tr>
+        <tr>
+            <td>City</td>
+           <td>{{driverGeneral.city}}</td>
+        </tr>
+          <tr>
+           <td>Province / State</td>
+           <td>{{driverGeneral.province}}</td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td>{{driverGeneral.country}}</td>
+        </tr>
+        <tr>
+           <td>Postal Code</td>
+           <td>{{driverGeneral.postalCode}}</td>
+        </tr>
+        <tr>
+          <td>Cell Phone</td>
+          <td>{{driverGeneral.cellPhone}}</td>
+        </tr>
+        <tr>
+          <td>Home Phone</td>
+          <td>{{driverGeneral.homePhone}}</td>
+        </tr>
+        
+      </table>
+    </div>
+
+  </div>
+  <!--<div class="col-md-4 col-xs-12">
+
+  </div>-->
+</div>
+
+<!--content for general ends here -->

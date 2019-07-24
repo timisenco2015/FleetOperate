@@ -1,0 +1,46 @@
+<!-- Trailer List -->
+<!--<div class="container"> -->
+
+    <h1>Trailers <span>(Total 58, available 6)</span></h1>
+    <div class="data_search">
+
+        <div class="row">
+            <div class="col-md-4 col-sm-12">Trailer ID <input type="search"> <button class="btn  btn-primary ">Search</button></div>
+            <div class="col-md-8 col-sm-12 data-search-right">Trailer Type <select><option>All</option><option>--Select--</option></select> Model <select><option>All</option><option>--Select--</option></select>                Status <select><option>All</option><option>--Select--</option></select></div>
+        </div>
+
+    </div>
+    <table id="example" class="display" cellspacing="0" width="100%" class='table table-striped table-bordered'>
+        <thead>
+            <tr>
+                <th>Trailer Name</th>
+                <th>Trailer Number</th>
+                <th>Status</th>
+                <th>Base Location</th>
+                <th>Last Known Location</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let trailer of trailers" (click)="onSelect(trailer)" class="truck-list-body">
+
+                <td>{{trailer.trailerName}}</td>
+                <td>{{trailer.trailerId}}</td>
+                <td>{{trailer.status}}</td>
+                <td>{{trailer.baseLocation}}</td>
+                <td>{{trailer.lastLocation}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf='showSummary'>
+        <trailer-map [selectedTrailerID]='broadcastDriverID' [trailerList]="sendTrailerList"></trailer-map>
+    </div>
+
+    <div *ngIf='showSummary'>
+        <trailer-summary [selectedTrailerID]='broadcastDriverID' [trailerList]="sendTrailerList"></trailer-summary>
+    </div>
+
+<!--</div>-->
+<!-- Trailer List -->

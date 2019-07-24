@@ -1,0 +1,42 @@
+<!-- content for driver starts here -->
+<div class="row tabbed-data">
+        <div class="col-md-4 col-xs-12">
+
+                <div *ngIf="fleetDriverInfo">
+                        <table class="data" cellspacing="2" *ngFor="let driverInfo of fleetDriverInfo.drivers">
+
+                                <tr>
+                                        <td>Driver Name</td>
+                                        <td>{{driverInfo.name}}</td>
+                                </tr>
+                                <tr>
+                                        <td>Licence Number</td>
+                                        <td>{{driverInfo.licenseNumber}}</td>
+                                </tr>
+                                <tr>
+                                        <td>Licence Expiry Date</td>
+                                        <td>{{driverInfo.licenseExpiryDate}}</td>
+                                </tr>
+                                <tr>
+                                        <td>Visa Expiry Date</td>
+                                        <td>{{driverInfo.visaExpiry}}</td>
+                                </tr>
+
+                        </table>
+                </div>
+
+                <div *ngIf="!fleetDriverInfo">
+                        No Driver information available for this fleet.
+                </div>
+
+
+        </div>
+        <div class="col-md-4 col-xs-12">
+
+
+        </div>
+        <div class="col-md-4 col-xs-12">
+
+        </div>
+</div>
+<!--content for driver ends here -->

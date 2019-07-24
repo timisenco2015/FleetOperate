@@ -1,0 +1,35 @@
+<!--<div class="container">-->
+
+<h1  class="separator">Driver Settings 
+    <span class="pull-right">
+    <a (click)="onClickDriverList()"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Driver List</a> | 
+    <a (click)="onClickSearchDriver()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>  Search Driver</a> | 
+    <a (click)="onClickAddDriver()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Add Driver</a> |
+    <a (click)="onClickConfirmDriver()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Confirm Driver</a>
+    </span>
+</h1>
+
+<div *ngIf='driverSearchBarDisplay'>
+    <driver-settings-search ></driver-settings-search>
+</div>
+
+<div *ngIf='driverListDisplay'>
+    <driver-settings-list (displayEditForm)='onDisplayEditForm($event)'></driver-settings-list>
+</div>
+
+
+<div *ngIf='driverAddDisplay'>
+    <driver-settings-add (displayDriverList)='onDisplayDriverList()'></driver-settings-add>
+</div>
+
+<div *ngIf='driverEditDisplay'>
+    <driver-settings-edit [selectedDriverIdToEdit]='broadcastDriverID' [driverToEdit]="sendDriverToEdit" 
+    (displayDriverList)='onDisplayDriverList()'></driver-settings-edit>
+</div>
+
+<div *ngIf='driverConfirmDisplay'>
+    <driver-settings-confirm (displayDriverList)='onDisplayDriverList()'></driver-settings-confirm>
+</div>
+
+			
+<!--</div>-->

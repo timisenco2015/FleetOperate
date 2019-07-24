@@ -1,0 +1,40 @@
+<!-- content for documents starts here -->
+<div class="row tabbed-data">
+    <div class="col-md-4 col-xs-12">
+
+        <div *ngIf="fleetDocuments">
+            <table class="data" cellspacing="2" *ngFor="let fleetDocument of fleetDocuments.documents">
+                <tr>
+                    <td>Document Type</td>
+                    <td>{{fleetDocument.name}}</td>
+                </tr>
+                <tr>
+                    <td>Document Date</td>
+                    <td>{{fleetDocument.documentDate}}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>{{fleetDocument.printStatus}}</td>
+                </tr>
+                <tr>
+                    <td>Last Update date</td>
+                    <td>{{fleetDocument.lastUpdateDate}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div *ngIf="!fleetDocuments">
+            No Documents available for this fleet.
+        </div>
+
+    </div>
+    <div class="col-md-4 col-xs-12">
+
+
+    </div>
+    <div class="col-md-4 col-xs-12">
+
+    </div>
+</div>
+<!--content for documents ends here -->
+  

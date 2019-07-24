@@ -1,0 +1,29 @@
+<!--<div class="container">-->
+
+<h1  class="separator">Trailer Settings <span class="pull-right">
+    <a (click)="onClickTrailerList()"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Trailer List</a> | 
+    <a (click)="onClickSearchTrailer()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>  Search Trailer</a> | 
+    <a (click)="onClickAddTrailer()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Add Trailer</a></span>
+</h1>
+
+<div *ngIf='trailerSearchBarDisplay'>
+    <trailer-settings-search ></trailer-settings-search>
+</div>
+
+<div *ngIf='trailerListDisplay'>
+    <trailer-settings-list (displayEditForm)='onDisplayEditForm($event)'></trailer-settings-list>
+</div>
+
+
+
+<div *ngIf='trailerAddDisplay'>
+    <trailer-settings-add (displayTrailerList)='onDisplayTrailerList()'></trailer-settings-add>
+</div>
+
+<div *ngIf='trailerEditDisplay'>
+    <trailer-settings-edit [selectedTrailerIdToEdit]='broadcastTrailerID' [trailerToEdit]="sendTrailerToEdit" 
+    (displayTrailerList)='onDisplayTrailerList()'></trailer-settings-edit>
+</div>
+
+			
+<!--</div>-->

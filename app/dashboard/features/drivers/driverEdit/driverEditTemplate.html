@@ -1,0 +1,84 @@
+<!-- Error Message Starts-->
+<div *ngIf="showError">
+<error [errorCode]="broadcastErrorCode"></error>
+</div>
+<!-- Error Message Ends-->
+<h1>Edit Driver</h1>
+<form [formGroup]="editDriverForm" >
+<div class="row">
+<div class="col-md-4">
+<table class="data" cellspacing="2">
+    
+<tr><td>First Name</td><td><input type="text" class="form-control" formControlName="firstName"  required></td></tr>
+ <tr><td>Driver Id</td><td><input type="text" style="display: none" class="form-control" formControlName="driverId" >
+</td></tr>
+<tr><td>Middle Name</td><td><input type="text" class="form-control" formControlName="middleName" ></td></tr>
+<tr><td>Last Name</td><td><input type="text" class="form-control" formControlName="lastName"  required></td></tr>
+<tr><td>Date Of Birth</td><td><input type="date" class="form-control" formControlName="dob" ></td></tr>
+<tr><td>Gender</td><td><input type="text" class="form-control" formControlName="gender" ></td></tr>
+<tr><td>Driving License Number</td><td><input type="text" class="form-control" formControlName="licenseNumber"  required></td></tr>
+<tr><td>Driving License Expiry</td><td><input type="date" class="form-control" formControlName="licenseExpiry"  required></td></tr>
+<tr><td>Canada Visa Status</td><td><input type="text" class="form-control" formControlName="canVisaStatus"></td></tr>
+<tr><td>USA Visa Status</td><td><input type="text" class="form-control" formControlName="usaVisaStatus" ></td></tr>
+<tr><td>Nationality</td><td><input type="text" class="form-control" formControlName="nationality"></td></tr>
+<tr><td>Notes</td><td><input type="text" class="form-control" formControlName="notes" ></td></tr>
+</table>
+</div>
+<div class="col-md-4">
+    <table class="data" cellspacing="2">
+<tr><td>Address Line 1</td><td><input type="text" class="form-control" formControlName="addressLine1"  required></td></tr>
+<tr><td>Address Line 2</td><td><input type="text" class="form-control" formControlName="addressLine2"  required></td></tr>
+<tr><td>City</td><td><input type="text" class="form-control" formControlName="city" ngModel= required></td></tr>
+<tr><td>Province</td><td><input type="text" class="form-control" formControlName="province"  required></td></tr>
+<tr><td>Country</td><td><input type="text" class="form-control" formControlName="country"  required></td></tr>
+<tr><td>Postal Code</td><td><input type="text" class="form-control" formControlName="postalCode"  required></td></tr>
+<tr><td>Mobile</td><td><input type="text" class="form-control" formControlName="cellPhone"  required></td></tr>
+<tr><td>Home Phone</td><td><input type="text" class="form-control" formControlName="homePhone" ></td></tr>
+<tr><td>Email Id</td><td><input type="text" class="form-control" formControlName="email"  required></td></tr>
+        </table>
+
+
+
+<!--
+<table class="data" cellspacing="2">
+    
+<tr><td>First Name</td><td><input type="text" class="form-control" formControlName="firstName" ngModel={{driverDetails.firstName}} required>
+                            <input type="text" style="display: none" class="form-control" formControlName="driverId" ngModel={{driverDetails.driverId}}>
+</td></tr>
+<tr><td>Middle Name</td><td><input type="text" class="form-control" formControlName="middleName" ngModel={{driverDetails.middleName}}></td></tr>
+<tr><td>Last Name</td><td><input type="text" class="form-control" formControlName="lastName" ngModel={{driverDetails.lastName}} required></td></tr>
+<tr><td>Date Of Birth</td><td><input type="date" class="form-control" formControlName="dob" ngModel={{driverDetails.dob}}></td></tr>
+<tr><td>Gender</td><td><input type="text" class="form-control" formControlName="gender" ngModel={{driverDetails.gender}}></td></tr>
+<tr><td>Driving License Number</td><td><input type="text" class="form-control" formControlName="licenseNumber" ngModel={{driverDetails.licenseNumber}} required></td></tr>
+<tr><td>Driving License Expiry</td><td><input type="date" class="form-control" formControlName="licenseExpiry" ngModel={{driverDetails.licenseExpiry}} required></td></tr>
+<tr><td>Canada Visa Status</td><td><input type="text" class="form-control" formControlName="canVisaStatus" ngModel={{driverDetails.canVisaStatus}}></td></tr>
+<tr><td>USA Visa Status</td><td><input type="text" class="form-control" formControlName="usaVisaStatus" ngModel={{driverDetails.usaVisaStatus}}></td></tr>
+<tr><td>Nationality</td><td><input type="text" class="form-control" formControlName="nationality" ngModel={{driverDetails.nationality}}></td></tr>
+<tr><td>Notes</td><td><input type="text" class="form-control" formControlName="notes" ngModel={{driverDetails.notes}}></td></tr>
+</table>
+</div>
+<div class="col-md-4">
+    <table class="data" cellspacing="2">
+<tr><td>Address Line 1</td><td><input type="text" class="form-control" formControlName="addressLine1" ngModel={{driverDetails.addressLine1}} required></td></tr>
+<tr><td>Address Line 2</td><td><input type="text" class="form-control" formControlName="addressLine2" ngModel={{driverDetails.addressLine2}} required></td></tr>
+<tr><td>City</td><td><input type="text" class="form-control" formControlName="city" ngModel={{driverDetails.city}} required></td></tr>
+<tr><td>Province</td><td><input type="text" class="form-control" formControlName="province" ngModel={{driverDetails.province}} required></td></tr>
+<tr><td>Country</td><td><input type="text" class="form-control" formControlName="country" ngModel={{driverDetails.country}} required></td></tr>
+<tr><td>Postal Code</td><td><input type="text" class="form-control" formControlName="postalCode" ngModel={{driverDetails.postalCode}} required></td></tr>
+<tr><td>Mobile</td><td><input type="text" class="form-control" formControlName="cellPhone" ngModel={{driverDetails.cellPhone}} required></td></tr>
+<tr><td>Home Phone</td><td><input type="text" class="form-control" formControlName="homePhone" ngModel={{driverDetails.homePhone}}></td></tr>
+<tr><td>Email Id</td><td><input type="text" class="form-control" formControlName="email" ngModel={{driverDetails.email}} required></td></tr>
+        </table>
+
+-->
+</div>
+ </div>
+ </form>
+ <br>
+<div class="row">
+<div class="col-md-4">
+<button type="button" (click)="onClickSave(editDriverForm.value)" class="btn btn-primary">Save</button> 
+<button class="btn btn-primary" (click)="onClickCancel()">Cancel</button>
+</div>
+ </div>
+ 

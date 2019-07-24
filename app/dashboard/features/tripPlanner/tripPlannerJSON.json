@@ -1,0 +1,173 @@
+[{ 
+    "tripId": "111",
+    "status": "in-transit",
+    "startDate": "2016-07-01", 
+    "endDate": "2016-07-31", 
+    "source": "winnipeg", 
+    "destination": "toronto", 
+    "truckId": "FleetId111", 
+    "trailersDetails": [ 
+        { 
+        "trailerID": "aj111" }, { 
+        "trailerID": "ss222" } ], 
+    "driversDetails": [ 
+        { 
+            "driverID": "MS111" }, { 
+            "driverID": "HS222" } ], 
+    "consignmentDetails": [ 
+        { "serialNumber": 1, 
+        "consignmentID": "111", 
+        "consignmentType": "load1", 
+        "consignmentSource": "winnipeg", 
+        "consignmentDestination": "toronto", 
+        "pickupDate": "2016-07-02", 
+        "deliveryDate": "2016-07-30" }, 
+        { 
+            "serialNumber": 2,
+             "consignmentID": "222", 
+             "consignmentType": "load2", 
+             "consignmentSource": "thunderbay", 
+             "consignmentDestination": "toronto", 
+             "pickupDate": "2016-07-06", 
+             "deliveryDate": "2016-07-29" } ] 
+        },
+
+        { 
+            "tripId": "222",
+    "status": "in-transit",
+    "startDate": "2016-07-01", 
+    "endDate": "2016-07-31", 
+    "source": "winnipeg", 
+    "destination": "toronto", 
+    "truckId": "FleetId111", 
+    "trailersDetails": [ 
+        { 
+        "trailerID": "aj111" }, { 
+        "trailerID": "ss222" } ], 
+    "driversDetails": [ 
+        { 
+            "driverID": "MS111" }, { 
+            "driverID": "HS222" } ], 
+    "consignmentDetails": [ 
+        { "serialNumber": 1, 
+        "consignmentID": "111", 
+        "consignmentType": "load1", 
+        "consignmentSource": "winnipeg", 
+        "consignmentDestination": "toronto", 
+        "pickupDate": "2016-07-02", 
+        "deliveryDate": "2016-07-30" }, 
+        { 
+            "serialNumber": 2,
+             "consignmentID": "222", 
+             "consignmentType": "load2", 
+             "consignmentSource": "thunderbay", 
+             "consignmentDestination": "toronto", 
+             "pickupDate": "2016-07-06", 
+             "deliveryDate": "2016-07-29" } ] 
+        },
+
+        { 
+            "tripId": "333",
+    "status": "in-transit",
+    "startDate": "2016-07-01", 
+    "endDate": "2016-07-31", 
+    "source": "winnipeg", 
+    "destination": "toronto", 
+    "truckId": "FleetId111", 
+    "trailersDetails": [ 
+        { 
+        "trailerID": "aj111" }, { 
+        "trailerID": "ss222" } ], 
+    "driversDetails": [ 
+        { 
+            "driverID": "MS111" }, { 
+            "driverID": "HS222" } ], 
+    "consignmentDetails": [ 
+        { "serialNumber": 1, 
+        "consignmentID": "111", 
+        "consignmentType": "load1", 
+        "consignmentSource": "winnipeg", 
+        "consignmentDestination": "toronto", 
+        "pickupDate": "2016-07-02", 
+        "deliveryDate": "2016-07-30" }, 
+        { 
+            "serialNumber": 2,
+             "consignmentID": "222", 
+             "consignmentType": "load2", 
+             "consignmentSource": "thunderbay", 
+             "consignmentDestination": "toronto", 
+             "pickupDate": "2016-07-06", 
+             "deliveryDate": "2016-07-29" } ] 
+        },
+
+        { 
+            "tripId": "444",
+    "status": "in-transit",
+    "startDate": "2016-07-01", 
+    "endDate": "2016-07-31", 
+    "source": "winnipeg", 
+    "destination": "toronto", 
+    "truckId": "FleetId111", 
+    "trailersDetails": [ 
+        { 
+        "trailerID": "aj111" }, { 
+        "trailerID": "ss222" } ], 
+    "driversDetails": [ 
+        { 
+            "driverID": "MS111" }, { 
+            "driverID": "HS222" } ], 
+    "consignmentDetails": [ 
+        { "serialNumber": 1, 
+        "consignmentID": "111", 
+        "consignmentType": "load1", 
+        "consignmentSource": "winnipeg", 
+        "consignmentDestination": "toronto", 
+        "pickupDate": "2016-07-02", 
+        "deliveryDate": "2016-07-30" }, 
+        { 
+            "serialNumber": 2,
+             "consignmentID": "222", 
+             "consignmentType": "load2", 
+             "consignmentSource": "thunderbay", 
+             "consignmentDestination": "toronto", 
+             "pickupDate": "2016-07-06", 
+             "deliveryDate": "2016-07-29" } ] 
+        },
+
+        { 
+            "tripId": "555",
+    "status": "in-transit",
+    "startDate": "2016-07-01", 
+    "endDate": "2016-07-31", 
+    "source": "winnipeg", 
+    "destination": "toronto", 
+    "truckId": "FleetId111", 
+    "trailersDetails": [ 
+        { 
+        "trailerID": "aj111" }, { 
+        "trailerID": "ss222" } ], 
+    "driversDetails": [ 
+        { 
+            "driverID": "MS111" }, { 
+            "driverID": "HS222" } ], 
+    "consignmentDetails": [ 
+        { "serialNumber": 1, 
+        "consignmentID": "111", 
+        "consignmentType": "load1", 
+        "consignmentSource": "winnipeg", 
+        "consignmentDestination": "toronto", 
+        "pickupDate": "2016-07-02", 
+        "deliveryDate": "2016-07-30" }, 
+        { 
+            "serialNumber": 2,
+             "consignmentID": "222", 
+             "consignmentType": "load2", 
+             "consignmentSource": "thunderbay", 
+             "consignmentDestination": "toronto", 
+             "pickupDate": "2016-07-06", 
+             "deliveryDate": "2016-07-29" } ] 
+        } 
+        
+        
+        
+        ]

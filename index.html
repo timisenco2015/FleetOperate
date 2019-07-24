@@ -1,0 +1,75 @@
+<html>
+  <head>
+      <!-- setting "/" for the routing sign -->
+    <base href="/">
+    <title>Fleet Operate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="external/css/styles.css">
+    <!--Caribou styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="external/caribou/styles/main.css">
+    <link rel="stylesheet" href="external/css/semantic.css">
+
+
+
+    <!-- load css for dashboard (fleetoperate) -->
+      <link rel="stylesheet" href="external/InsidePortalCss/generalCss.css">
+    
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+<script src="external/js/moment/moment.js"></script>
+    <script src="external/js/momentTimeZone/moment-timezone.js"></script>
+
+     <!-- Here Map Integration-->
+     <link rel="stylesheet" type="text/css" href="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css" />
+    
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+      type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+      type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js" 
+      type="text/javascript" charset="utf-8"></script>
+      <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+      <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- google charts -->  
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- google map script 
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2GSYx-FbzCL1XvekzThsMweoWHpTKIF0" async defer></script>-->
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+    <!-- AWS SDK script -->
+    <script src="external/js/aws-cognito-sdk.min.js"></script>
+    <script src="external/js/amazon-cognito-identity.min.js"></script>
+    <script src="node_modules/aws-sdk/dist/aws-sdk.js"></script>
+  </head>
+  <!-- 3. Display the application -->
+  <body [ngStyle]="{
+    'width':'auto !important', 'overflow-x':'scroll','min-width':'700px !important' }">
+    <my-app>Loading...
+        
+        
+    </my-app>
+    <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="external/bootstrap-sass-3.3.6/assets/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

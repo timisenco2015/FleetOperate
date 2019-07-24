@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12">
+                    <label> Please click on each order to view more information </label>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-1" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                    <label> S/No </label>
+                </div>
+                <div class="col-1" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                    <label> Billing No </label>
+                </div>
+                <div class="col-2" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                    <label> Date: </label>
+                </div>
+                <div class="col-2" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                    <label> Amount: </label>
+                </div>
+                <div class="col-2" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                    <label> Gst: </label>
+                </div>
+                <div class="col-2" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                    <label> Pst: </label>
+                </div>
+                <div class="col-2" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                        <label> Total Amount: </label>
+                    </div>   
+            </div>
+            <div class="row mt-2 detailsViewClicked" *ngFor="let billingInfo of displayBillingInfo; let i = index" (click)="onSubDetailsView(i)" >
+                <div class="col-12">
+                    <div class="row "  >
+                        <div class="col-1" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                            <label> {{i}} </label>
+                        </div>
+                        <div class="col-1" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                            <label> {{billingInfo.billingId}} </label>
+                        </div>
+                        <div class="col-4" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                            <label>  {{billingInfo.billingTimestamp}} </label>
+                        </div>
+                        <div class="col-2" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                            <label>{{billingInfo.amount}} </label>
+                        </div>
+                        <div class="col-1 " [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                            <label> {{billingInfo.gst}} </label>
+                        </div>
+                        <div class="col-1" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                            <label> {{billingInfo.pst}} </label>
+                        </div>
+                        <div class="col-2" [ngStyle]="{'border':'2px solid #D2D7D3'}">
+                                <label> {{billingInfo.totalAmount}} </label>
+                            </div>
+                    </div> 
+                    <div class="row mt-2 subDetailsViewClicked" hidden >
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label> Your Order Details </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="data" cellspacing="2">
+                                        <tr>
+                                            <th [ngStyle]="{'width':'10%'}"><label>Order No</label></th>
+                                            <th [ngStyle]="{'width':'20%'}" ><label>Date</label></th>
+                                            <th [ngStyle]="{'width':'20%'}" ><label>Sub Plan</label></th>
+                                            <th [ngStyle]="{'width':'10%'}"><label>Quantity</label></th>
+                                            <th [ngStyle]="{'width':'40%'}"><label>Ship To</label></th>
+                                        </tr>
+                                        <tr *ngFor="let orderList of billingInfo.ordersInfo; let i = index">
+                                            <td  [ngStyle]="{'width':'10%'}">{{orderList.orderNumber}}</td>
+                                            <td [ngStyle]="{'width':'20%'}">{{orderList.createdTimestamp}}</td>
+                                            <td [ngStyle]="{'width':'20%'}">{{orderList.plan}}</td>
+                                            <td [ngStyle]="{'width':'10%'}">{{orderList.quantity}}</td>
+                                            <td [ngStyle]="{'width':'40%'}">{{orderList.shippingAddressDetails.addressLine1}}, {{orderList.shippingAddressDetails.city}}, {{orderList.shippingAddressDetails.province}}, {{orderList.shippingAddressDetails.country}}, {{orderList.shippingAddressDetails.postalCode}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </div>
+</div>
+    

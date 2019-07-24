@@ -1,0 +1,14 @@
+[{
+    "companyId": 6,
+    "tripPlanner": "accessed",
+    "fleet": "accessed",
+    "drivers": "accessed",
+    "trailers": "accessed",
+    "documents": "accessed",
+    "controlCenter": "accessed",
+    "communications": "not-accessed",
+    "settings": "accessed",
+    "customerProfile": "not-accessed"
+}
+
+]

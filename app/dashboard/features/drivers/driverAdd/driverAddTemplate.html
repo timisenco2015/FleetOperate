@@ -1,0 +1,317 @@
+<!-- Error Message Starts-->
+<div class ="row ml-3">
+        <div class="col-12">
+            <div *ngIf="showFieldError">
+                <label>{{errorMessages}}</label>    
+            </div>
+            <!-- Error Message Ends-->
+            <div class="alert alert-success" role="alert" *ngIf="displayDriverAdded">
+                <div class="glyphicon glyphicon-ok"></div> 
+                <div>New Driver Added Successfully</div>
+            </div>
+            <form [formGroup]="addDriverForm" *ngIf="showForm">
+                <div *ngIf="addDriverViewPage1" >
+                    <div class ="col-12 pb-3">
+                        <div class="row mt-3 mb-5">
+                            <div class="col-12">
+                                <h1 [ngStyle]="{'color':'#ABB7B7'}">Add Driver</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Full Name <span>*</span></label>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> First Name</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input type="text" [ngStyle]="inputFirstNameFieldCss" class="form-control" formControlName="firstName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Middle Name</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputMiddleNameFieldCss"  type="text" class="form-control" formControlName="middleName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Last Name</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputLastNameFieldCss"  type="text" class="form-control" formControlName="lastName" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <label>Gender <span>*</span></label>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputGenderFieldCss"  type="text" class="form-control" formControlName="gender" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <label>Date of Birth<span>*</span></label>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <div class="col-4">   
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputDobFieldCss"  type="date" class="form-control" formControlName="dob" max="2900-12-31" min="1800-12-31" required>
+                                        </div>
+                                    </div>
+                                </div>     
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <label>Address <span>*</span></label>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Adress Line 1</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputAddressLine1FieldCss"  type="text" class="form-control" formControlName="addressLine1" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-12">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Adress Line 2</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputAddressLine2FieldCss"  type="text" class="form-control" formControlName="addressLine2" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}">City</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="iinputCityFieldCss" type="text" class="form-control" formControlName="city" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> State/Province</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputState_provinceFieldCss" type="text" class="form-control" formControlName="province" required>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}">Postal/ Zip Code</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputZip_postal_codFieldCss"  type="text" class="form-control" formControlName="postalCode" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Country</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputCountryFieldCss"  type="text" class="form-control" formControlName="country" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <label>Phone Number <span>*</span></label>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Mobile Phone</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputMobilePhoneFieldCss"  type="text" class="form-control" formControlName="cellPhone" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Home Phone</label>
+                                        </div>
+                                        <div [ngStyle]="{'display':'block'}">
+                                            <input [ngStyle]="inputHomePhoneFieldCss"  type="text" class="form-control" formControlName="homePhone" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end mt-3">
+                            <div class="col-12" >
+                                <label [ngStyle]="{'float':'right'}" (click)="showAddnewDrivePage2()"> Next <span class="glyphicon glyphicon-menu-right"></span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="addDriverViewPage2" class="row" >
+                    <div class="col-12">
+                        <div class="row">
+                            <div class ="offset-3 col-9 pb-3">
+                                <div class="row mt-3 mb-5">
+                                    <div class="col-12">
+                                        <h1 [ngStyle]="{'color':'#ABB7B7'}">Add Driver</h1>
+                                    </div>
+                                </div>
+                            <div class="row mt-3">
+                                <div class="col-3">
+                                    <label>Driving License Number<span>*</span></label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-6">   
+                                            <div [ngStyle]="{'display':'block'}">
+                                                    <input [ngStyle]="inputDriverLincNumberFieldCss"  type="text" class="form-control" formControlName="licenseNumber" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-3">
+                                    <label>Driving License Expiry<span>*</span></label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-6">   
+                                            <div [ngStyle]="{'display':'block'}">
+                                                <input  [ngStyle]="inputDriverLicencseExpiryFieldCss"  type="date" class="form-control" formControlName="licenseExpiry" max="2900-12-31" min="1800-12-31" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-3">
+                                    <label>Driving License Issued Authority<span>*</span></label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-6">   
+                                            <div [ngStyle]="{'display':'block'}">
+                                                    <input [ngStyle]="inputDriverLincEIssuedAuthorityFieldCss"  type="text" class="form-control" formControlName="licenseNumber" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row mt-3">
+                                <div class="col-3">
+                                    <label>Driving License Issued Province/State<span>*</span></label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-6">   
+                                            <div [ngStyle]="{'display':'block'}">
+                                                    <input [ngStyle]="inputDriverLincEIssuedProvinceStateFieldCss"   type="text" class="form-control" formControlName="licenseIssuedProvince" required>
+                                            </div>
+                                        </div>
+                                    </div>         
+                                </div>
+                            </div> 
+                            <div class="row mt-3">
+                                <div class="col-3">
+                                    <label>Canada Visa Status<span>*</span></label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-6">   
+                                            <div [ngStyle]="{'display':'block'}">
+                                                    <input [ngStyle]="inputCandaVisaStatusFieldCss"    type="text" class="form-control" formControlName="canVisaStatus" required>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div> 
+                            <div class="row mt-3">
+                                <div class="col-3">
+                                    <label>USA Visa Status<span>*</span></label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-6">   
+                                            <div [ngStyle]="{'display':'block'}">
+                                                    <input [ngStyle]="inputUsaVisaStatusFieldCss"    type="text" class="form-control" formControlName="canVisaStatus" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row mt-3">
+                                <div class="col-3">
+                                    <label>Nationality<span>*</span></label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-6">   
+                                            <div [ngStyle]="{'display':'block'}">
+                                                    <input [ngStyle]="inputNationalityFieldCss"    type="text" class="form-control" formControlName="nationality" required>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div> 
+                            <div class="row mt-3">
+                                <div class="col-3">
+                                    <label>Notes<span>*</span></label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-6">   
+                                            <div [ngStyle]="{'display':'block'}">
+                                                    <input [ngStyle]="inputNotesFieldCss"    type="text" class="form-control" formControlName="notes" required>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="offset-7 col-md-5">
+                            <button type="button" (click)="onClickSave(addDriverForm.value)" class="btn btn-primary">Save</button> 
+                            <button class="btn btn-primary" (click)="onClickCancel()">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between mt-4">
+                        <div class="col-12">
+                            <label (click)="showAddnewDrivePage1()"> <span class="glyphicon glyphicon-menu-left"></span> Previous </label>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    
+    

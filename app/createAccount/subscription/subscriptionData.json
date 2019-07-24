@@ -1,0 +1,14 @@
+{
+    "subscriptionPrices": {
+        "standard": 25.00,
+        "enhanced": 60.00,
+        "premier": null
+    },
+    "tax":{
+        "manitoba": {
+            "gst": 0.05,
+            "pst": 0.08,
+            "totalTax": 0.13
+        }
+    }
+}

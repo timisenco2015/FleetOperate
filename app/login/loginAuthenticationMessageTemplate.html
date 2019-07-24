@@ -1,0 +1,17 @@
+<div class="container">
+
+<div *ngIf="showLoginMessage">
+<div class="alert alert-warning" role="alert">
+   <strong>Alert!</strong> Please Login to use the Fleet Operate service !
+</div>
+</div>
+
+<div *ngIf="showAlreadyLoggedMsg">
+<div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span></button>
+    <strong>Alert!</strong> You are already logged in !
+</div>
+</div>
+
+</div>

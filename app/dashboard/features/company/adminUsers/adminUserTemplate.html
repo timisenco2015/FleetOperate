@@ -1,0 +1,267 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+            <label class="align-items-end">Edit</label><a class="ml-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true" (click)="onEnableFieldInput($event)"></span></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form  [formGroup]="adminUserForm" >
+                    <div  >
+                            <div class ="col-12 pb-3">
+                               
+                                <div class="row mt-3">
+                                    <div class="col-3">
+                                        <label>Email </label>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row">
+        
+                                            <div class="col-8">
+                                                
+                                                <div [ngStyle]="{'display':'block'}">
+                                                        <input type="text" class="form-control" formControlName="adminEmail" name="adminEmail" required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">
+                                                        
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="showError" class="row">
+                                                <div class="col-12">
+                                                    <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminEmailFc.hasError('required') && submitAttempt">
+                                                        <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                        <div class="col-3">
+                                            <label>Date of Birth </label>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+            
+                                                <div class="col-8">
+                                                    
+                                                    <div [ngStyle]="{'display':'block'}">
+                                                            <input type="text" class="form-control" formControlName="adminDob" name="adminRole"  required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">
+                                                            
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="showError" class="row">
+                                                    <div class="col-12">
+                                                        <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminDobFc.hasError('required') && submitAttempt">
+                                                            <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                            <div class="col-3">
+                                                <label>Gender </label>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="row">
+                
+                                                    <div class="col-8">
+                                                        
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                                <input type="text" class="form-control" formControlName="adminGender" name="adminGender" required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">       
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="showError" class="row">
+                                                        <div class="col-12">
+                                                            <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminGenderFc.hasError('required') && submitAttempt">
+                                                                <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-3">
+                                                <label>Phone </label>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="row">
+                
+                                                    <div class="col-8">
+                                                        
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                                <input type="text" class="form-control" formControlName="adminCellPhone" name="adminCellPhone" required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">       
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="showError" class="row">
+                                                        <div class="col-12">
+                                                            <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminGenderFc.hasError('required') && submitAttempt">
+                                                                <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                            </div>
+                                        </div>
+                                        <!--<div class="row mt-3">
+                                                <div class="col-3">
+                                                    <label>Email <span>*</span></label>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="row">
+                    
+                                                        <div class="col-8">
+                                                            
+                                                            <div [ngStyle]="{'display':'block'}">
+                                                                    <input type="text" class="form-control" formControlName="adminEmail" name="adminEmail" required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">
+                                                                    
+                                                                    
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div *ngIf="showError" class="row">
+                                                            <div class="col-12">
+                                                                <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminEmailFc.hasError('required') && submitAttempt">
+                                                                    <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                </div>
+                                            </div>-->
+                                <div class="row mt-3">
+                                    <div class="col-3">
+                                        <label>Address </label>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Adress Line 1</label>
+                                                        </div>
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <input type="text" class="form-control" formControlName="adminAddressLine1" name="adminAddressLine1" required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="showError" class="row">
+                                                        <div class="col-12">
+                                                            <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminAddressLine1Fc .hasError('required') && submitAttempt">
+                                                                <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Adress Line 2</label>
+                                                        </div>
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <input type="text" class="form-control" formControlName="adminAddressLine2" name="adminAddressLine2"  required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="showError" class="row">
+                                                        <div class="col-12">
+                                                            <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminAddressLine1Fc .hasError('required') && submitAttempt">
+                                                                <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <label [ngStyle]="{'color':'#ABB7B7'}">City</label>
+                                                        </div>
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <input type="text" class="form-control" formControlName="adminCity" name="adminCity" required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="showError" class="row">
+                                                        <div class="col-12">
+                                                            <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminCityFc.hasError('required') && submitAttempt">
+                                                                <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col-12">
+
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <label [ngStyle]="{'color':'#ABB7B7'}"> State/Province</label>
+                                                        </div>
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <input type="text" class="form-control" formControlName="adminPronvice" name="adminPronvice" required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="showError" class="row">
+                                                        <div class="col-12">
+                                                            <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminPronviceFc.hasError('required') && submitAttempt">
+                                                                <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>    
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <label [ngStyle]="{'color':'#ABB7B7'}">Postal/ Zip Code</label>
+                                                        </div>
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <input type="text" class="form-control" formControlName="adminPostalCode" name="adminPostalCode"  required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="showError" class="row">
+                                                        <div class="col-12">
+                                                            <div [ngStyle]="{'color':'red','font-size':'80%'}" *ngIf="adminPronviceFc.hasError('required') && submitAttempt">
+                                                                <label  [ngStyle]="{'width':'100%'}">* This field cannot be empty</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <label [ngStyle]="{'color':'#ABB7B7'}"> Country</label>
+                                                        </div>
+                                                        <div [ngStyle]="{'display':'block'}">
+                                                            <input type="text" class="form-control" formControlName="adminCountry" name="adminCountry" required [ngStyle]="inputFieldCss" [readonly]="noInputFeildEdit">    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </form>
+        </div>
+    </div>
+       <div class="row" [hidden]="!isEditInfo">
+        <div class="col-12">
+              <button type="button" class="btn btn-primary btn-lg" (click)="onUpdate(adminUserForm.value)" >Update</button>
+        </div>
+    </div>
+</div>

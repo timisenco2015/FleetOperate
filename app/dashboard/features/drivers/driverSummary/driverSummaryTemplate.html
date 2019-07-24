@@ -1,0 +1,63 @@
+<!-- Driver Summary -->
+<h1 class="separator">Summary <a href="#"><span class="glyphicon glyphicon-print" aria-hidden="true" style="float:right"></span></a></h1>
+<!-- in transit -->
+<div class="row">
+    <div class="col-md-4 col-xs-12">
+
+        <div *ngIf="driverSummary">
+            <table class="data" cellspacing="2">
+                <tr>
+                    <td>Driver Name</td>
+                    <td>{{driverSummary.name}}</td>
+                </tr>
+                <tr>
+                    <td>License Number</td>
+                    <td>{{driverSummary.licenseNumber}}</td>
+                </tr>
+                <tr>
+                    <td>Address Line 1</td>
+                    <td>{{driverSummary.address}}</td>
+                </tr>
+                <tr>
+                    <td>Address Line 2</td>
+                    <td>{{driverSummary.address2}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="col-md-4 col-xs-12">
+
+        <div *ngIf="driverSummary">
+            <table class="data">
+                <tr>
+                    <td>Country</td>
+                    <td>{{driverSummary.country}}</td>
+                </tr>
+                <tr>
+                    <td>Province / State</td>
+                    <td>{{driverSummary.province}}</td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>{{driverSummary.city}}</td>
+                </tr>
+                <tr>
+                    <td>Postal Code</td>
+                    <td>{{driverSummary.postalCode}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div *ngIf="!driverSummary">
+        No Summary information available for this driver.
+    </div>
+
+    <div class="col-md-4 col-xs-12">
+        <img src="external/images/truck.jpg">
+    </div>
+</div>
+<!-- Driver Summary -->

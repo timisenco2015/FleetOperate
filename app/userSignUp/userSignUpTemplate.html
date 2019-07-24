@@ -1,0 +1,118 @@
+
+    <div class="container">
+    <!-- Complete Company Body Starts-->
+
+        <!-- Display fill all required fields error starts-->
+        <div class="alert alert-danger" role="alert" *ngIf="displayRequiredFieldError">
+            <div class="glyphicon glyphicon-remove"></div> 
+            <div>Please fill all required fields with red asterisk (*).</div>
+        </div>
+        <!-- Display fill all required fields error ends-->
+   
+        <div class="row justify-content-center">
+                <div class="col">
+                  <div class="form-header">
+                    <h1>Company Profile</h1>
+                    <p>You're just two steps away to explore the FleetOperate portal. Please complete your company profile below.</p>
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+        <form [formGroup]="addCompanyForm" >
+        <div class="row">
+        <div class="col">
+    
+        <h4>Bison Travels</h4>
+        <br>
+        <table class="data" cellspacing="2">
+        <tr><td>Company Website<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyAddressLine1"></td></tr>
+        <tr><td>Business Number</td><td><input type="text" class="form-control" formControlName="companyAddressLine2"></td></tr>
+        <tr><td>Business Name<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyCity"></td></tr>
+        <tr><td>DOT Number<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyProvince"></td></tr>
+        <tr><td>Company Start Time<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyCountry"></td></tr>
+        <tr><td>Company Timezone<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="companyPostalCode" ></td></tr>
+        </table>
+        </div>
+        
+         </div>
+         </form>
+        
+        <br>
+        <div class="row">
+        <div class="col-md-6">
+        <button type="button"  (click)="onClickNext(addCompanyForm)" class="btn btn-primary">Next</button> 
+        <button class="btn btn-primary" (click)="onClickCancel()">Cancel</button>
+        <!--<button id="showModal" [hidden]="true" data-toggle="modal" data-target="#createAccountSuccessfulModal">Open Modal</button>-->
+        </div>
+        </div>
+        
+        <!-- Complete Company Body Ends-->
+    </div>
+
+    <div class="container">
+            <!-- Complete Admin Body Starts-->
+        
+                <!-- Display fill all required fields error starts-->
+                <div class="alert alert-danger" role="alert" *ngIf="displayRequiredFieldError">
+                    <div class="glyphicon glyphicon-remove"></div> 
+                    <div>Please fill all required fields with red asterisk (*).</div>
+                </div>
+                <!-- Display fill all required fields error ends-->
+
+                <div class="row justify-content-center">
+                        <div class="col">
+                          <div class="form-header">
+                            <h1>Admin Profile</h1>
+                            <p>You're just one step away to explore the FleetOperate portal. Please complete your admin profile below.</p>
+                          </div>
+                        </div>
+                      </div>
+                
+              
+                
+                <form [formGroup]="addCompanyForm" >
+                <div class="row">
+
+                <div class="col">
+                        <h4>John Doe</h4>
+                        <br>
+                <table class="data" cellspacing="2">
+                    
+                <tr><td>Date Of Birth<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminFirstName" ></td></tr>
+                <tr><td>Gender</td><td><input type="text" class="form-control" formControlName="adminMiddleName" ></td></tr>
+                </table>
+                <br>
+                <h5>Address</h5>
+
+                <table class="data" cellspacing="2">
+                <tr><td>Address Line 1<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminLastName" ></td></tr>
+                
+                <tr><td>Address Line 2<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="email" (blur)="onEmailIdTabOff(addCompanyForm.value)" class="form-control" formControlName="adminEmail" ></td></tr>
+                <tr><td>City<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminCellPhone" ></td></tr>
+                <tr><td>Province/State<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminCellPhone" ></td></tr>
+                <tr><td>Country<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminCellPhone" ></td></tr>
+                <tr><td>Postal Code<span [ngStyle]="{'color':'red'}">*</span></td><td><input type="text" class="form-control" formControlName="adminCellPhone" ></td></tr>
+                </table>
+                </div>
+            
+                
+                 </div>
+                 </form>
+                
+                <br>
+                <div class="row">
+                <div class="col-md-6">
+                <button type="button"  (click)="onClickNext(addCompanyForm)" class="btn btn-primary">Next</button> 
+                <button class="btn btn-primary" (click)="onClickCancel()">Back</button>
+                <!--<button id="showModal" [hidden]="true" data-toggle="modal" data-target="#createAccountSuccessfulModal">Open Modal</button>-->
+                </div>
+                </div>
+                
+                <!-- Complete Admin Body Ends-->
+            </div>
+        
+      
+        
+        

@@ -1,0 +1,64 @@
+<!-- Dashboard Page Contents 
+<div class="container">-->
+
+<!-- Error Message Starts-->
+<div *ngIf="showError">
+<error [errorCode]="broadcastDashboardError"></error>
+</div>
+<!-- Error Message Ends-->
+
+    <div class="dashboard">
+        <div class="row">
+            <div class="dashboard-icons">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickTripPlanner()"><img src="external/images/icons/tripplanner.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)="onClickTripPlanner()">Trip Planner</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickFleet()"><img src="external/images/icons/fleet.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)='onClickFleet()'>Fleet</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickDrivers()"><img src="external/images/icons/drivers.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)="onClickDrivers()">Drivers</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickTrailers()"><img src="external/images/icons/trailers.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)="onClickTrailers()">Trailers</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickDocuments()"><img src="external/images/icons/documents.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)="onClickDocuments()">Documents</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickControlCenter()"><img src="external/images/icons/controlcenter.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)="onClickControlCenter()">Control Center</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickCommunications()"><img src="external/images/icons/communication.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)="onClickCommunications()">Communication</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickSettings()"><img src="external/images/icons/settings.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)="onClickSettings()">Settings</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                        <a (click)="onClickCustomerProfile()"><img src="external/images/icons/customerprofile.png" class="img-rounded dashboard-icon"></a>
+                        <br>
+                        <a (click)="onClickCustomerProfile()">Customer Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--</div>
+ Dashboard Page Contents -->

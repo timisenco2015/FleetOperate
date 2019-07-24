@@ -1,0 +1,38 @@
+<div class="container-fluid" >
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-7">
+                        <h1>Drivers <span>(Total 58, available 6)</span></h1>
+                </div>
+                <div class="col-5">
+                    <div class="row" id="driversOptions">
+                        <div class="col-6 ">
+                                <a [ngStyle]="{'float':'right'}" (click)="onClickDriverList()"><i class="fa fa-list-alt" aria-hidden="true" role="button"></i> Driver List</a>  
+                        </div>
+                        <div class="col-6">
+                                <a    (click)="onClickAddDriver()"><i class="fa fa-plus-circle" aria-hidden="true" role="button"></i>  Add Driver</a>  
+                        </div>
+                    </div>
+                        
+                       
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+                <div  [ngStyle]="{'border':'2px solid #044F67','padding':'4px','padding-left':'13px', 'padding-right':'13px'}"  *ngIf="homeActive || driverListView">
+                        <driver-list></driver-list>
+                    </div>
+                    <div  [ngStyle]="{'border':'2px solid #044F67','padding':'4px','padding-left':'13px', 'padding-right':'13px'}" *ngIf='addDriverView'>
+                        <driver-add> </driver-add>
+                    </div>
+        </div>
+    </div>
+
+    
+
+</div>
+   

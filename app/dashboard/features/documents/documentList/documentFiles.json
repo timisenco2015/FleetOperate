@@ -1,0 +1,34 @@
+[{
+    "name" : "Doc1",
+    "type" : "PDF",
+    "id" : "D1",
+    "source" : "truck",
+    "tripId" : "trp123",
+    "printStatus" : "Printed",
+    "status":"Received from truck123",
+    "documentDate" : 3543,
+    "lastUpdateDate" : 534,
+    "notes": "Nothing for now"
+  }, {
+    "name" : "Doc2",
+    "type" : "TXT",
+    "id" : "D2",
+    "source" : "office",
+    "tripId" : "trp123",
+    "printStatus" : "Not-Printed",
+    "status":"Sent to truck123",
+    "documentDate" : 3543,
+    "lastUpdateDate" : 534,
+    "notes": "Nothing for now"
+  }, {
+    "name" : "Doc3",
+    "type" : "DOCX",
+    "id" : "D3",
+    "source" : "truck",
+    "tripId" : "trp123",
+    "printStatus" : "Printed",
+    "status":"Received from truck123",
+    "documentDate" : 3543,
+    "lastUpdateDate" : 534,
+    "notes": "Nothing for now"
+  }]
